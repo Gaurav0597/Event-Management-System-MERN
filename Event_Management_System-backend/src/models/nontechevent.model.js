@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const EventSchema = new mongoose.Schema(
+const NonTechEventSchema = new mongoose.Schema(
   {
     EventName: { type: String, required: true },
     EventImage: { type: String, required: true },
@@ -23,6 +23,6 @@ const EventSchema = new mongoose.Schema(
     versionKey: false,
   },
 )
-const EventData = mongoose.model('EventData', EventSchema)
+const EventData = mongoose.model('NonTechEventData', NonTechEventSchema)
 
 export default EventData

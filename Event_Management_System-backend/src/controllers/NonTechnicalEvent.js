@@ -1,12 +1,12 @@
 import express from "express"
-import EventSchema from "../models/event.model.js"
+import NonTechEventSchema from "../models/nontechevent.model.js"
 const router=express.Router()
 
 
 
 router.get("/",async (req, res) => {
     try {
-        const data = await EventSchema.find({}).lean().exec()
+        const data = await NonTechEventSchema.find({}).lean().exec()
         res.status(200).json(data)
     } catch (error) {
         console.log(error)
@@ -15,7 +15,7 @@ router.get("/",async (req, res) => {
 
 router.post('', async (req, res) => {
     try {
-      const data = await EventSchema.create(req.body)
+      const data = await NonTechEventSchema.create(req.body)
       res.send(data)
     } catch (error) {
       return res.status(500).send(error.message)
@@ -24,7 +24,7 @@ router.post('', async (req, res) => {
   
   router.get("/:id",async(req,res)=>{
     try{
-         const data=await EventSchema.findById(req.params.id).lean().exec()
+         const data=await NonTechEventSchema.findById(req.params.id).lean().exec()
          return res.status(200).send(data);
     }
     catch(err){

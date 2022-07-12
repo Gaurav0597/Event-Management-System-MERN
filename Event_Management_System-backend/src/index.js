@@ -1,29 +1,33 @@
-import express from "express"
-import cors from "cors"
-import mongoose from "mongoose"
-import bodyParser from "body-parser"
-import dotenv from "dotenv"
-
+import express from 'express'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
 dotenv.config()
-
-const app=express()
+import eventController from './controllers/EventController.js'
+import nontecheventContoller from "./controllers/NonTechnicalEvent.js"
+const app = express()
 
 app.use(
-    cors({
-        origin:"http://localhost:5000",
-        credentials:true
-    })
+  cors({
+    origin: 'http://localhost:5000',
+    credentials: true,
+  }),
 )
 app.use(express.json())
+app.use('/event', eventController)
+app.use('/nonTechnicalEvent', nontecheventContoller)
 
-const connection=process.env.DB
-const PORT=process.env.PORT||5000
+const connection = process.env.DB
+const PORT = process.env.PORT || 5000
 
-mongoose.connect(connection,{useNewUrlParser:true,useUnifiedTopology:true})
-.then(()=>{
-    app.listen(PORT,()=>{
-        console.log(`server running on ${PORT}`)
+mongoose
+  .connect(connection, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`server running on ${PORT}`)
     })
-}).catch((err)=>{
-     console.log(err)
-})
+  })
+  .catch((err) => {
+    console.log(err)
+  })
