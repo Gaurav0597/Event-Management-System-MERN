@@ -1,4 +1,4 @@
-import * as types from "./ActionType.js"
+import * as types from "./ActionType.jsx"
 import Axios from "axios"
 
 //technicalevent data actioncreation funtion
@@ -15,7 +15,7 @@ const TecheventDataSuccess=(payload)=>{
         payload,
     }
 }
-const NonTecheventDataFailure=(payload)=>{
+const TecheventDataFailure=(payload)=>{
     return{
         type:types.NONTECHNICALEVENT_DATA_FAILURE,
         payload,
@@ -24,6 +24,17 @@ const NonTecheventDataFailure=(payload)=>{
 
 
 // write axios request here for technical data 
+
+export const TechEventDataFetch=(payload)=>(dispatch)=>{
+    dispatch(TecheventDataRequest())
+    Axios.get("http://localhost:5000/event")
+    .then((response)=>{
+        dispatch(TecheventDataSuccess(response.data))
+        // console.log(response.data)
+    }).catch((error)=>{
+        dispatch(TecheventDataFailure(error))
+    })
+}
 
 //--------------------------------------------------------------------//
 //nontechnicalevent data actioncreation funtion
@@ -40,7 +51,7 @@ const NonTecheventDataSuccess=(payload)=>{
         payload,
     }
 }
-const TecheventDataFailure=(payload)=>{
+const NonTecheventDataFailure=(payload)=>{
     return{
         type:types.TECHNICALEVENT_DATA_FAILURE,
         payload,
@@ -48,5 +59,16 @@ const TecheventDataFailure=(payload)=>{
 }
 
 // write axios request here for nontechnical data 
+
+export const nonTectdataFetch=(payload)=>(dispatch)=>{
+    dispatch(NonTecheventDataRequest())
+    Axios.get("http://localhost:5000/nonTechnicalEvent").
+    then((res)=>{
+        // console.log(res.data)
+        dispatch(NonTecheventDataSuccess(res.data))
+    }).catch((err)=>{
+        dispatch(NonTecheventDataFailure(err))
+    })
+}
 
 //---------------------------------------------------------------//

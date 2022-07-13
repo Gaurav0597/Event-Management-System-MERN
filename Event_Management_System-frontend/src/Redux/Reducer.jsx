@@ -1,4 +1,4 @@
-import * as types from "./ActionType.js"
+import * as types from "./ActionType.jsx"
 
 const initState={
     error:"",
@@ -58,3 +58,5 @@ const EventReducer=(state=initState,{type,payload}) =>{
             return state
     }
 }
+
+export default EventReducer
