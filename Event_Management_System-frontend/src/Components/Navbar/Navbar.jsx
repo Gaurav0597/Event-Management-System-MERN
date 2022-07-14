@@ -7,7 +7,7 @@ const Navbar = () => {
     { name: 'Schedule', link: 'schedule' },
     { name: 'Practice', link: 'practice' },
     { name: 'Events', link: 'events' },
-    { name: 'Industry Talk', link: 'industry-talk' },
+    { name: 'Industry Talk', link: 'industryTalk' },
   ]
 
   return (

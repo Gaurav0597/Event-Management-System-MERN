@@ -5,6 +5,7 @@ const initState={
     loading:false,
     TechnicalEvent:[],
     NonTechnicalEvent:[],
+    individualData:{}
 }
 
 const EventReducer=(state=initState,{type,payload}) =>{
@@ -54,6 +55,28 @@ const EventReducer=(state=initState,{type,payload}) =>{
                 error:payload
             }
 //-----------------------------------------------------------------------------------//
+     //individual  event data cases
+     case types.GETINDIVIDUALEVENT_DATA_REQUEST:
+     return{
+        ...state,
+        loading:true,
+        error:""
+     }
+     case types.GETINDIVIDUALEVENT_DATA_SUCCESS:
+        return{
+            ...state,
+            loading:false,
+            individualData:payload,
+            error:""
+        }
+    case  types.GETINDIVIDUALEVENT_DATA_FAILURE:
+        return {
+            ...state,
+            loading:false,
+            error:payload
+        }
+
+    //-------------------------------------------------------------------------------------//
         default:
             return state
     }

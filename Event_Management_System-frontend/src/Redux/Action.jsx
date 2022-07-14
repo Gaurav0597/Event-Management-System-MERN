@@ -72,3 +72,59 @@ export const nonTectdataFetch=(payload)=>(dispatch)=>{
 }
 
 //---------------------------------------------------------------//
+
+// INDIVIDUAL EVENT ACTION CREATOR FUNCTIONS --------------------------------
+
+const GetIndividualEventDataRequest=(payload)=>{
+    return{
+        type:types.GETINDIVIDUALEVENT_DATA_REQUEST,
+        payload
+    }
+}
+
+const GetIndividualEventDataSuccess=(payload)=>{
+    return{
+    type:types.GETINDIVIDUALEVENT_DATA_SUCCESS,
+    payload
+    }
+}
+
+const GetIndividualEventDataFailure=(payload)=>{
+    return{
+        type:types.GETINDIVIDUALEVENT_DATA_FAILURE,
+        payload
+    }
+   
+}
+
+// write axios request here for indivudual Event  data 
+
+// for Technical event
+export const GetIndividualTechEventData=(payload)=>(dispatch)=>{
+    dispatch(GetIndividualEventDataRequest())
+
+    Axios.get(`http://localhost:5000/event/${payload}`).
+    then((response)=>{
+        console.log(response.data)
+         dispatch(GetIndividualEventDataSuccess(response.data))
+    }).catch((error)=>{
+        dispatch(GetIndividualEventDataFailure(error))
+    })
+    
+}
+// For nontechnical event
+export const GetIndividualNonTechEventData=(payload)=>(dispatch)=>{
+    dispatch(GetIndividualEventDataRequest())
+
+    Axios.get(`http://localhost:5000/nonTechnicalEvent/${payload}`).
+    then((response)=>{
+        console.log(response.data)
+         dispatch(GetIndividualEventDataSuccess(response.data))
+    }).catch((error)=>{
+        dispatch(GetIndividualEventDataFailure(error))
+    })
+    
+}
+
+//----------------------------------------------------------------------------//
+
