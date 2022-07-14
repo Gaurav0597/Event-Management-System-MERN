@@ -113,18 +113,18 @@ export const GetIndividualTechEventData=(payload)=>(dispatch)=>{
     
 }
 // For nontechnical event
-export const GetIndividualNonTechEventData=(payload)=>(dispatch)=>{
-    dispatch(GetIndividualEventDataRequest())
+// export const GetIndividualNonTechEventData=(payload)=>(dispatch)=>{
+//     dispatch(GetIndividualEventDataRequest())
 
-    Axios.get(`http://localhost:5000/nonTechnicalEvent/${payload}`).
-    then((response)=>{
-        console.log(response.data)
-         dispatch(GetIndividualEventDataSuccess(response.data))
-    }).catch((error)=>{
-        dispatch(GetIndividualEventDataFailure(error))
-    })
+//     Axios.get(`http://localhost:5000/nonTechnicalEvent/${payload}`).
+//     then((response)=>{
+//         console.log(response.data)
+//          dispatch(GetIndividualEventDataSuccess(response.data))
+//     }).catch((error)=>{
+//         dispatch(GetIndividualEventDataFailure(error))
+//     })
     
-}
+// }
 
 //----------------------------------------------------------------------------//
 
