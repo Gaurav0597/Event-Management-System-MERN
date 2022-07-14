@@ -103,7 +103,7 @@ const GetIndividualEventDataFailure=(payload)=>{
 export const GetIndividualTechEventData=(payload)=>(dispatch)=>{
     dispatch(GetIndividualEventDataRequest())
 
-    Axios.get(`http://localhost:5000/event/${payload}`).
+    Axios.get(`http://localhost:5000${payload}`).
     then((response)=>{
         console.log(response.data)
          dispatch(GetIndividualEventDataSuccess(response.data))

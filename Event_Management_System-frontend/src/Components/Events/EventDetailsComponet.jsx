@@ -7,10 +7,12 @@ const EventDetailsComponet = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
   const details = useSelector((state) => state.Event.individualData)
-  console.log(details)
-  //  console.log(id)
+
+  var str=window.location.pathname
+  console.log(str)
+
   useEffect(() => {
-    dispatch(GetIndividualTechEventData(id))
+    dispatch(GetIndividualTechEventData(str))
   }, [dispatch])
   return (
     <div className="w-full mx-auto bg-gray-100/10 transition-all relative flex flex-col md:min-h-[500px] xl:flex-row xl:w-11/12">

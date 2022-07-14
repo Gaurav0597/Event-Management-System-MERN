@@ -8,13 +8,13 @@ const TechnicalEvents = () => {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.Event.TechnicalEvent)
   console.log(data)
-
+  const str="events"
   useEffect(() => {
     dispatch(TechEventDataFetch())
   }, [dispatch])
   return (
    <div>
-    <EventComponent data={data}/>
+    <EventComponent data={data} str={str}/>
    </div>
   )
 }

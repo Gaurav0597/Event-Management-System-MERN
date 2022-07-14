@@ -1,7 +1,11 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 
 const EventComponent = (props) => {
+  // const name=useParams()
+  // console.log(name)
+  var str=window.location.pathname
+  console.log(str)
   return (
     <div>
       <h1
@@ -30,7 +34,7 @@ const EventComponent = (props) => {
               />
             </div>
             <p className="text-white text-justify">{e.Introduction}</p>
-            <Link to={`/events/${e._id}`}>
+            <Link to={`${str}/${e._id}`}>
               <button
                 className="text-white rounded-0
                 py-2 px-4 mt-4

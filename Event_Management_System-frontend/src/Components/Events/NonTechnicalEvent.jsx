@@ -7,13 +7,13 @@ const NonTechnicalEvent = () => {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.Event.NonTechnicalEvent)
   console.log(data)
-
+  const str="nonTechnicalEvent"
   useEffect(() => {
     dispatch(nonTectdataFetch())
   }, [dispatch])
   return (
     <div>
-      <EventComponent data={data} />
+      <EventComponent data={data} str={str} />
     </div>
   )
 }

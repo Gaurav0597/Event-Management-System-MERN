@@ -13,11 +13,11 @@ function App() {
   return (
     <div className="bg-violet-900">
       <Navbar />
-      {/* <AddEvent/> */}
+      <AddEvent/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/events" element={<TechnicalEvents/>}></Route>
-        <Route path="/events/:id" element={<EventDetailsComponet/>}></Route>
+        <Route path="/event" element={<TechnicalEvents/>}></Route>
+        <Route path="/event/:id" element={<EventDetailsComponet/>}></Route>
         <Route path="/nonTechnicalEvent" element={<NonTechnicalEvent/>}></Route>
         <Route path="/nonTechnicalEvent/:id" element={<EventDetailsComponet/>}></Route>
         <Route path="/industryTalk" element={<IndustryTalk/>}></Route>
