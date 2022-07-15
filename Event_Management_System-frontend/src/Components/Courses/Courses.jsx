@@ -1,24 +1,52 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetAllCoursesData } from '../../Redux/Action'
 
 const Courses = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(GetAllCoursesData())
+  }, [dispatch])
+  // const coursesData=useSelector((state) => state.Event.coursesData)
+  const data = useSelector((state) => state.Event.coursesData)
+  console.log(data)
   return (
-    <div>
-        <div className="flex flex-col  h-[350px] w-[305px] bg-gray-100/10 rounded-2xl">
-                 <div className="h-2/5 w-full">
-                    <img className="w-full h-full" src="https://static.toiimg.com/thumb/msid-84847748,imgsize-44422,width-400,resizemode-4/84847748.jpg" alt="" />
-                 </div>
-                 <div className="h-1/6 flex mt-4">
-                    <div>
-                        <img className="h-5/6 w-16 " src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/SUNY_brandmark.svg/1200px-SUNY_brandmark.svg.png" alt="" />
-                    </div>
-                    <p className="mt-2 ml-2 text-white ">The State University of New York</p>
-                </div>  
-                 <div className="h-1/6 text-white mt-2 text-2xl leading-none font-normal">Build Your First Android App</div>  
-                 <div className="h-1/6 mt-2">
-                  <p className=" text-white"><strong >Skill you will Gain:</strong>Android Studio,Android Development</p>    
-                </div>  
-                 <div className="h-1/6 text-white mt-2"><strong>Type:</strong>Mixed-Course</div>   
+    <div className=" w-4/5 m-auto grid gap-8 grid-cols-3">
+      {data.map((e) => (
+        <div className="flex flex-col  h-[350px] bg-gray-100/10 rounded-2xl">
+          <div className="h-2/5 w-full">
+            <img
+              className="w-full h-full"
+            src={e.CourseImage}
+              alt=""
+            />
+          </div>
+          <div className="h-1/6 flex mt-4">
+            <div>
+              <img
+                className="h-5/6 w-16 "
+                src={e.UniversityImage}
+                alt=""
+              />
+            </div>
+            <p className="mt-2 ml-2 text-white ">
+            {e.University}
+            </p>
+          </div>
+          <div className="h-1/6 text-white mt-2 text-2xl leading-none font-normal">
+            {e.CourseName}
+          </div>
+          <div className="h-1/6 mt-2">
+            <p className=" text-white">
+             {e.Skill}
+            </p>
+          </div>
+          <div className="h-1/6 text-white mt-2">
+            {e.Type}
+          </div>
         </div>
+      ))}
     </div>
   )
 }

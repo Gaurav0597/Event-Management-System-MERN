@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   const links = [
     { name: 'Home', link: '/' },
-    { name: 'Schedule', link: 'schedule' },
+    { name: 'Courses', link: 'courses' },
     { name: 'Practice', link: 'practice' },
     { name: 'Events', link: 'event' },
     { name: 'Industry Talk', link: 'industryTalk' },

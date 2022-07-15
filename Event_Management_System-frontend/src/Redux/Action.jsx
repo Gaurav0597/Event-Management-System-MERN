@@ -99,32 +99,56 @@ const GetIndividualEventDataFailure=(payload)=>{
 
 // write axios request here for indivudual Event  data 
 
-// for Technical event
+// for Technical event And nontechnical data
 export const GetIndividualTechEventData=(payload)=>(dispatch)=>{
     dispatch(GetIndividualEventDataRequest())
 
     Axios.get(`http://localhost:5000${payload}`).
     then((response)=>{
-        console.log(response.data)
+        // console.log(response.data)
          dispatch(GetIndividualEventDataSuccess(response.data))
     }).catch((error)=>{
         dispatch(GetIndividualEventDataFailure(error))
     })
     
 }
-// For nontechnical event
-// export const GetIndividualNonTechEventData=(payload)=>(dispatch)=>{
-//     dispatch(GetIndividualEventDataRequest())
 
-//     Axios.get(`http://localhost:5000/nonTechnicalEvent/${payload}`).
-//     then((response)=>{
-//         console.log(response.data)
-//          dispatch(GetIndividualEventDataSuccess(response.data))
-//     }).catch((error)=>{
-//         dispatch(GetIndividualEventDataFailure(error))
-//     })
-    
-// }
 
 //----------------------------------------------------------------------------//
 
+// COURSES ACTION CREATOR FUNCTIONS --------------------------------
+
+const GetCoursesDataRequest=(payload)=>{
+    return{
+        type:types.COURSES_DATA_REQUEST,
+        payload
+    }
+}
+
+const GetCoursesDataSuccess=(payload)=>{
+    // console.log(payload)
+    return{
+    type:types.COURSES_DATA_SUCCESS,
+    payload
+    }
+}
+
+const GetCoursesDataFailure=(payload)=>{
+    return{
+        type:types.COURSES_DATA_FAILURE,
+        payload
+    } 
+}
+
+// write axios request here for indivudual Event  data 
+export const GetAllCoursesData=(payload)=>(dispatch)=>{
+    dispatch(GetCoursesDataRequest())
+    Axios.get(`http://localhost:5000/course`).
+    then((response)=>{
+        console.log(response.data)
+         dispatch(GetCoursesDataSuccess(response.data))
+    }).catch((error)=>{
+        dispatch(GetCoursesDataFailure(error))
+    })
+    
+}

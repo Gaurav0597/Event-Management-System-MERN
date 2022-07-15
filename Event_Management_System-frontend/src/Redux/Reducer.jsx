@@ -5,10 +5,12 @@ const initState={
     loading:false,
     TechnicalEvent:[],
     NonTechnicalEvent:[],
-    individualData:{}
+    individualData:{},
+    coursesData:[],
 }
 
 const EventReducer=(state=initState,{type,payload}) =>{
+    // console.log(payload)
     switch(type){
 
         //Technical event data cases
@@ -70,6 +72,28 @@ const EventReducer=(state=initState,{type,payload}) =>{
             error:""
         }
     case  types.GETINDIVIDUALEVENT_DATA_FAILURE:
+        return {
+            ...state,
+            loading:false,
+            error:payload
+        }
+
+    //-------------------------------------------------------------------------------------//
+     //courses data cases
+     case types.COURSES_DATA_REQUEST:
+     return{
+        ...state,
+        loading:true,
+        error:""
+     }
+     case types.COURSES_DATA_SUCCESS:
+        return{
+            ...state,
+            loading:false,
+            coursesData:payload,
+            error:""
+        }
+    case types.COURSES_DATA_FAILURE:
         return {
             ...state,
             loading:false,
