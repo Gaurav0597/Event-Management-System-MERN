@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Courses from './Components/Courses/Courses'
 import AddEvent from './Components/Events/AddEvent'
 import EventDetailsComponet from './Components/Events/EventDetailsComponet'
 import NonTechnicalEvent from './Components/Events/NonTechnicalEvent'
@@ -14,6 +15,7 @@ function App() {
     <div className="bg-violet-900">
       <Navbar />
       {/* <AddEvent/> */}
+      <Courses/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/event" element={<TechnicalEvents/>}></Route>
