@@ -15,7 +15,7 @@ function App() {
     <div className="bg-violet-900">
       <Navbar />
       {/* <AddEvent/> */}
-      <Courses/>
+      {/* <Courses/> */}
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/event" element={<TechnicalEvents/>}></Route>
