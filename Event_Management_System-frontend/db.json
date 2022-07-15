@@ -122,5 +122,95 @@
             "Rule5":"No external intervention will be allowed and the judges decision is final and no changes would be made thereafter"
         }
         
+    ],
+    "Courses": [
+        {
+            "CourseName":"Data Structure and Algorithms",
+            "University":"University of California San Diego",
+            "UniversityImage":"https://upload.wikimedia.org/wikipedia/en/thumb/4/44/University_of_California%2C_San_Diego_seal.svg/1200px-University_of_California%2C_San_Diego_seal.svg.png",
+            "CourseImage":"https://www.synergisticit.com/wp-content/uploads/2020/09/How-Data-Structures-and-Algorithms-are-important-for-Computer-Science-Graduates.jpg",
+            "Skill":"Data Structures,Algorithms,Data Management",
+            "Type":"Beginner-Course"
+        },
+        {
+            "CourseName":"JavaScript Basics",
+            "University":"University of California,Davis",
+            "UniversityImage":"https://d28htnjz2elwuj.cloudfront.net/wp-content/uploads/2019/03/01104758/University-of-California-Davis-400x400.jpg",
+            "CourseImage":"https://www.tutorialrepublic.com/lib/images/javascript-illustration.png",
+            "Skill":"Javascript Syntax,Data Structure,Theoretical Concept",
+            "Type":"Beginner-Course"
+        },
+        {
+            "CourseName":"HTML,CSS,and Javascript for Web Developers",
+            "University":"Johns Hopkins University",
+            "UniversityImage":"https://www.orissapost.com/wp-content/uploads/2021/08/Johns-Hopkins-university.jpeg",
+            "CourseImage":"https://developerpitstop.com/wp-content/uploads/2021/08/html-css-js.jpeg",
+            "Skill":"HTML and CSS,Web Develpoment,Web",
+            "Type":"Mixed-Course"
+        },
+        {
+            "CourseName":"IBM Full Stack Software Developer",
+            "University":"IBM",
+            "UniversityImage":"https://pbs.twimg.com/profile_images/1493921227542568962/GjftIwHN_400x400.jpg",
+            "CourseImage":"https://www.codingbytes.com/wp-content/uploads/2022/03/full-stack-web-development.jpg",
+            "Skill":"Application Development,Backend Web Development,Blockchain",
+            "Type":"Beginner-Professional Certificate"
+        },
+        {
+            "CourseName":"Introduction to Front-End Development",
+            "University":"Meta",
+            "UniversityImage":"https://static.dezeen.com/uploads/2021/11/meta-facebook-rebranding-name-news_dezeen_2364_col_hero2.jpg",
+            "CourseImage":"https://www.namasteui.com/wp-content/uploads/2018/08/front-end-web-development.jpg",
+            "Skill":"Web Development Tools,Business Psychology,Computer Architecture",
+            "Type":"Advance-Course"
+        },
+        {
+            "CourseName":"Google UX Design",
+            "University":"Google",
+            "UniversityImage":"https://pbs.twimg.com/profile_images/1455185376876826625/s1AjSxph_400x400.jpg",
+            "CourseImage":"https://distantjob.com/wp-content/uploads/2021/03/ux-ui-developer-vs-ui-uk-designer.png",
+            "Skill":"Accounting, Advertising, Analysis,Brand Management",
+            "Type":"Beginner-Professional Certificate"
+        },
+        {
+            "CourseName":"Responsive Website Development and Design",
+            "University":"University of London",
+            "UniversityImage":"https://pbs.twimg.com/profile_images/1410899973366034433/qF4mToGA_400x400.jpg",
+            "CourseImage":"https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777417/Responsive_Design-1200x628-cf29128a0de1b39f50f54b703e491b7a-d1539e7beb483b5f54cb20c84f6ed2f4.png",
+            "Skill":"Computer Programming,Business Psychology,Computer Architecture",
+            "Type":"Beginner-Specialization"
+        },
+        {
+            "CourseName":"Cloud Application Development Foundation",
+            "University":"IBM",
+            "UniversityImage":"https://pbs.twimg.com/profile_images/1493921227542568962/GjftIwHN_400x400.jpg",
+            "CourseImage":"https://www.thebalancesmb.com/thmb/opn3cUYAX4Mib7p9DnnFix0b9jE=/3437x2578/smart/filters:no_upscale()/cloud-computing-502462262-5ac1130e119fa800371ba0a8.jpg",
+            "Skill":"Back-end Web Development, Blockchain,Cloud Applications",
+            "Type":"Beginner-Specialization"
+        },{
+            "CourseName":"Python for Everybody",
+            "University":"University of Michigan",
+            "UniversityImage":"https://thumbs.dreamstime.com/b/entrance-sign-to-university-michigan-ann-arbor-mi-usa-october-campus-105908050.jpg",
+            "CourseImage":"https://5.imimg.com/data5/JO/MI/MY-14645284/python-developer-500x500.png",
+            "Skill":"Application Programming, Interfaces,Computational logic",
+            "Type":"Beginner-Course"
+        },
+        {
+            "CourseName":"Java Programming:Solving Problems with Software",
+            "University":"Duke University",
+            "UniversityImage":"https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Duke_University_seal.svg/1200px-Duke_University_seal.svg.png",
+            "CourseImage":"https://i.ytimg.com/vi/rlOfNsoHlMk/maxresdefault.jpg",
+            "Skill":"Syntax,Software,Enterpreneurship",
+            "Type":"Beginner-Course"
+        },
+        {
+            "CourseName":"Build Your First Android App",
+            "University":"The State University of New York",
+            "UniversityImage":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/SUNY_brandmark.svg/1200px-SUNY_brandmark.svg.png",
+            "CourseImage":"https://static.toiimg.com/thumb/msid-84847748,imgsize-44422,width-400,resizemode-4/84847748.jpg",
+            "Skill":"Android Studio,Android Development",
+            "Type":"Mixed-Course"
+        }
+       
     ]
 }
