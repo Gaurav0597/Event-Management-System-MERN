@@ -35,6 +35,19 @@ export const TechEventDataFetch=(payload)=>(dispatch)=>{
         dispatch(TecheventDataFailure(error))
     })
 }
+export const TechEventDataPost=(payload)=>(dispatch)=>{
+    dispatch(TecheventDataRequest())
+    Axios.post("http://localhost:5000/event",payload)
+    .then((response)=>{
+        // dispatch(TecheventDataSuccess(response.data))
+        // console.log(response.data)
+    }).then(()=>{
+        dispatch(TechEventDataFetch())
+        // console.log(response.data)
+    }).catch((error)=>{
+        dispatch(TecheventDataFailure(error))
+    })
+}
 
 //--------------------------------------------------------------------//
 //nontechnicalevent data actioncreation funtion

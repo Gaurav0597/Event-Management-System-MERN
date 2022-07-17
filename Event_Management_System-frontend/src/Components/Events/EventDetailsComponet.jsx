@@ -9,7 +9,7 @@ const EventDetailsComponet = () => {
   const details = useSelector((state) => state.Event.individualData)
 
   var str=window.location.pathname
-  console.log(str)
+  // console.log(str)
 
   useEffect(() => {
     dispatch(GetIndividualTechEventData(str))

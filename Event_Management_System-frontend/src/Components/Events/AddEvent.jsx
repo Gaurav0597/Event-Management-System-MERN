@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { TechEventDataPost } from '../../Redux/Action'
 
 const AddEvent = () => {
+  const dispatch = useDispatch()
   const [addEvent,setAddEvent]=useState({
     EventName:"",
     EventImage:"",
@@ -21,6 +24,7 @@ const AddEvent = () => {
   const handleSubmit=(event)=>{
     event.preventDefault()
     console.log(addEvent)
+    dispatch(TechEventDataPost(addEvent))
   }
   return (
     <form>

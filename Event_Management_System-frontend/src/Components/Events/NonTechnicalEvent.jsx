@@ -6,7 +6,7 @@ import EventComponent from './EventComponent'
 const NonTechnicalEvent = () => {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.Event.NonTechnicalEvent)
-  console.log(data)
+  // console.log(data)
   const str="nonTechnicalEvent"
   useEffect(() => {
     dispatch(nonTectdataFetch())

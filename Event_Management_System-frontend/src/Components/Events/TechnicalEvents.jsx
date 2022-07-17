@@ -7,7 +7,7 @@ import EventComponent from './EventComponent'
 const TechnicalEvents = () => {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.Event.TechnicalEvent)
-  console.log(data)
+  // console.log(data)
   const str="events"
   useEffect(() => {
     dispatch(TechEventDataFetch())

@@ -5,7 +5,7 @@ const EventComponent = (props) => {
   // const name=useParams()
   // console.log(name)
   var str=window.location.pathname
-  console.log(str)
+  // console.log(str)
   return (
     <div>
       <h1
