@@ -4,320 +4,311 @@ import { TechEventDataPost } from '../../Redux/Action'
 
 const AddEvent = () => {
   const dispatch = useDispatch()
-  const [addEvent, setAddEvent] = useState({
-    EventName: '',
-    EventImage: '',
-    Introduction: '',
-    Date: '',
-    Time: '',
-    Platform: '',
-    Participant: null,
-    Prize1: null,
-    Prize2: null,
-    Fees: null,
-    Rule1: '',
-    Rule2: '',
-    Rule3: '',
-    Rule4: '',
-    Rule5: '',
+  const [addEvent,setAddEvent]=useState({
+    EventName:"",
+    EventImage:"",
+    Introduction:"",
+    Date:"",
+    Time:"",
+    Platform:"",
+    Participant:null,
+    Prize1:null,
+    Prize2:null,
+    Fees:null,
+    Rule1:"",
+    Rule2:"",
+    Rule3:"",
+    Rule4:"",
+    Rule5:"",
   })
-  const handleSubmit = (event) => {
+  const handleSubmit=(event)=>{
     event.preventDefault()
     console.log(addEvent)
     dispatch(TechEventDataPost(addEvent))
   }
   return (
-    <div className="w-3/5 m-auto">
-      <form>
-        <div class="grid gap-4 mb-6 md:grid-cols-2">
-          <div>
+    <form>
+      <div className="w-4/5 flex m-auto">
+        <div className="w-1/3 m-2">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,EventName:event.target.value})
+              }}
+            />
             <label
-              for="first_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               EventName
             </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              id="first_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Event Name Here"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
               required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, EventName: event.target.value })
+              onChange={(event)=>{
+                setAddEvent({...addEvent,EventImage:event.target.value})
               }}
             />
-          </div>
-          <div>
             <label
-              for="first_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              PlatForm
-            </label>
-            <input
-              type="text"
-              id="first_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Platform here"
-              required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Platform: event.target.value })
-              }}
-            />
-          </div>
-          <div>
-            <label
-              for="first_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               EventImage
             </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              id="first_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add  Event Image Here"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
               required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, EventImage: event.target.value })
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Introduction:event.target.value})
               }}
             />
-          </div>
-          <div>
             <label
-              for="first_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Participant
-            </label>
-            <input
-              type="number"
-              id="first_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Participant here"
-              required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Participant: event.target.value })
-              }}
-            />
-          </div>
-          <div>
-            <label
-              for="first_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Introduction
             </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              id="first_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Introduction Here"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
               required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Introduction: event.target.value })
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Date:event.target.value})
               }}
             />
-          </div>
-          <div>
             <label
-              for="last_name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Prize 1
-            </label>
-            <input
-              type="number"
-              id="last_name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Prize 1 here"
-              required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Prize1: event.target.value })
-              }}
-            />
-          </div>
-          <div>
-            <label
-              for="company"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Date
             </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              id="company"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Enter data here"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
               required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Date: event.target.value })
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Time:event.target.value})
               }}
             />
-          </div>
-          <div>
             <label
-              for="phone"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Prize 2
-            </label>
-            <input
-              type="number"
-              id="phone"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Prize 2 here"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Prize2: event.target.value })
-              }}
-            />
-          </div>
-          <div>
-            <label
-              for="website"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Time
             </label>
+          </div>
+        </div>
+        <div className="w-1/3 m-2">
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              id="website"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Time here"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
               required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Time: event.target.value })
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Platform:event.target.value})
               }}
             />
-          </div>
-          <div>
             <label
-              for="visitors"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-           Fees
+              Platform
             </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="number"
-              id="visitors"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add Fees Here"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
               required
-              onChange={(event) => {
-                setAddEvent({ ...addEvent, Fees: event.target.value })
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Participant:event.target.value})
               }}
             />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Participant
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="number"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Prize1:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Prize1
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="number"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Prize2:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Prize2
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="number"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Fees:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Fees
+            </label>
           </div>
         </div>
+        <div className="w-1/3 m-2">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Rule1:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Rule1
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Rule2:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Rule2
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Rule3:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Rule3
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Rule4:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Rule4
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+              onChange={(event)=>{
+                setAddEvent({...addEvent,Rule5:event.target.value})
+              }}
+            />
+            <label
+              for="floating_email"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Rule5
+            </label>
+          </div>
+        </div>
+      </div>
+     <button onClick={handleSubmit}>Submit</button>
      
-        <div>
-          <label
-            for="visitors"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >
-        Rule 1
-          </label>
-          <input
-            type="text"
-            id="visitors"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Add Rule 1 here"
-            required
-            onChange={(event) => {
-              setAddEvent({ ...addEvent, Rule1: event.target.value })
-            }}
-          />
-        </div>
-        <div>
-          <label
-            for="visitors"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >
-            Rule 2
-          </label>
-          <input
-            type="text"
-            id="visitors"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Add Rule 2 here"
-            required
-            onChange={(event) => {
-              setAddEvent({ ...addEvent, Rule2: event.target.value })
-            }}
-          />
-        </div>
-        <div>
-          <label
-            for="visitors"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >
-        Rule 3
-          </label>
-          <input
-            type="text"
-            id="visitors"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Add Rule 3 here"
-            required
-            onChange={(event) => {
-              setAddEvent({ ...addEvent, Rule3: event.target.value })
-            }}
-          />
-        </div>
-        <div>
-          <label
-            for="visitors"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >
-           Rule 4
-          </label>
-          <input
-            type="text"
-            id="visitors"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Add Rule 4 here"
-            required
-            onChange={(event) => {
-              setAddEvent({ ...addEvent, Rule4: event.target.value })
-            }}
-          />
-        </div>
-        <div>
-          <label
-            for="visitors"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >
-            Rule 5
-          </label>
-          <input
-            type="text"
-            id="visitors"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Add Rule 5 here"
-            required
-            onChange={(event) => {
-              setAddEvent({ ...addEvent, Rule5: event.target.value })
-            }}
-    
-          />
-        </div>
-       
-       
-       <div className="flex items-center justify-center">
-       <button
-          type="submit"
-          onClick={handleSubmit}
-          className=" text-white mt-6  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Submit
-        </button>
-       </div>
-      
-      </form>
-    </div>
+    </form>
   )
 }
 

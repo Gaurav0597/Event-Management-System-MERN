@@ -20,30 +20,25 @@ const Navbar = () => {
         {/* pagesDiv */}
         {links.map((item) => {
           return (
-            <NavLink
-              to={item.link}
-              className={({ isActive }) => {
-                return ` text-gray-200 border-b border-purple-500 tracking-widest p-2 px-8 transition hover:bg-purple-400 font-bold hover:scale-125 transform ${
-                  isActive ? 'bg-purple-600' : ''
-                }`
-              }}
-            >
-              {item.name}
-            </NavLink>
+            
+              <NavLink
+                  to={item.link}
+                className={({ isActive }) => {
+                  return ` text-gray-200 border-b border-purple-500 tracking-widest p-2 px-8 transition hover:bg-purple-400 font-bold hover:scale-125 transform ${
+                    isActive ? 'bg-purple-600' : ''
+                  }`
+                }}
+            
+              >
+                {item.name}
+              </NavLink>
+            
           )
         })}
       </div>
       <div className="w-1/6 items-center">
-        <NavLink
-          to="/register"
-          className={({ isActive }) => {
-            return `text-gray-200 border-b ml-28 border-purple-500 tracking-widest p-2 px-8 transition hover:bg-purple-400 font-bold hover:scale-125 transform ${
-              isActive ? 'bg-purple-600' : ''
-            }`
-          }}
-       
-        >  Register</NavLink>
-      
+        {/* login/logout div */}
+        LOginDiv
       </div>
     </div>
   )

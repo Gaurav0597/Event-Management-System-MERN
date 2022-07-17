@@ -1,7 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Login from './Components/auth/Login'
-import Register from './Components/auth/Register'
 import Courses from './Components/Courses/Courses'
 import AddEvent from './Components/Events/AddEvent'
 import EventDetailsComponet from './Components/Events/EventDetailsComponet'
@@ -19,8 +17,6 @@ function App() {
       <AddEvent/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
         <Route path="/event" element={<TechnicalEvents/>}></Route>
         <Route path="/event/:id" element={<EventDetailsComponet/>}></Route>
         <Route path="/nonTechnicalEvent" element={<NonTechnicalEvent/>}></Route>

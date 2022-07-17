@@ -3,12 +3,10 @@ import './Login.css'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { login1, loginUser } from '../../Redux/Action'
+// import { login1, loginUser } from '../../Redux/Action'
 
 const Login = () => {
-  const userId=useSelector((state)=>state.Event.userId)
-  const email=useSelector((state)=>state.Event.userName)
-  console.log(email)
+  const userId=useSelector((state)=>state.maxFashion.userId)
   const navigate=useNavigate()
   const dispatch=useDispatch()
   const [user, setUser] = useState({
@@ -27,8 +25,8 @@ const Login = () => {
   const login = () => {
     axios.post('http://localhost:5000/login', user).then((res) => {
       console.log(res.data)
-      dispatch(login1(res.data.user._id))
-      dispatch(loginUser(res.data.user.email))
+      // dispatch(login1(res.data.user._id))
+      // dispatch(loginUser(res.data.user.name))
       navigate("/")
       if(userId!==""){
         alert(res.data.message)
