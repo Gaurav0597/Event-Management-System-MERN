@@ -3,6 +3,8 @@ import * as types from "./ActionType.jsx"
 const initState={
     error:"",
     loading:false,
+    userId: '',
+    userName:"",
     TechnicalEvent:[],
     NonTechnicalEvent:[],
     individualData:{},
@@ -101,6 +103,22 @@ const EventReducer=(state=initState,{type,payload}) =>{
         }
 
     //-------------------------------------------------------------------------------------//
+
+    //username and userid
+
+     //userId
+     case types.GETUSERID:
+        return {
+          ...state,
+          userId: payload,
+        }
+     //username
+     case types.GETUSERNAME:
+      return {
+        ...state,
+        userName:payload
+      }
+      //--------------------------------------------------------------------------------------------------------
         default:
             return state
     }
