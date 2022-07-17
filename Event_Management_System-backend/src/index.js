@@ -7,6 +7,8 @@ dotenv.config()
 import eventController from './controllers/EventController.js'
 import nontecheventContoller from "./controllers/NonTechnicalEvent.js"
 import coursecontroller from "./controllers/CourseController.js"
+import loginAuth from "./controllers/AuthController.js"
+import RegisterAuth from "./controllers/AuthController.js"
 const app = express()
 
 app.use(
@@ -19,6 +21,8 @@ app.use(express.json())
 app.use('/event', eventController)
 app.use('/nonTechnicalEvent', nontecheventContoller)
 app.use('/course',coursecontroller)
+app.use("/",loginAuth)
+app.use("/",RegisterAuth)
 
 const connection = process.env.DB
 const PORT = process.env.PORT || 5000
