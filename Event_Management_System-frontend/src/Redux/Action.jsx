@@ -168,3 +168,20 @@ export const GetAllCoursesData=(payload)=>(dispatch)=>{
 
 
 //-------------------------------------------------------------------------------------------------------//
+
+//login userid and username
+export const login1 = (payload) => {
+    return {
+      type: types.GETUSERID,
+      payload,
+    }
+  }
+  
+  export const loginUser = (payload) => {
+    return {
+      type: types.GETUSERNAME,
+      payload,
+    }
+  }
+
+//---------------------------------------------------------------------------------------------------------//
