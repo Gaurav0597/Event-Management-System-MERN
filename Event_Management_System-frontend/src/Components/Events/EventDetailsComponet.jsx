@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { GetIndividualTechEventData } from '../../Redux/Action'
+import { addTechEventToUser, GetIndividualTechEventData } from '../../Redux/Action'
 
 const EventDetailsComponet = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
   const details = useSelector((state) => state.Event.individualData)
-
+  const userId = useSelector((state) => state.Event.userId)
   var str=window.location.pathname
   // console.log(str)
+   const handleRegister = () => {
+    const obj = {
+      _id :details._id,
+      userId : userId
+    }
+    dispatch(addTechEventToUser(obj))
+   }
+
 
   useEffect(() => {
     dispatch(GetIndividualTechEventData(str))
@@ -27,7 +35,7 @@ const EventDetailsComponet = () => {
             alt="eventdetail"
           />
         </div>
-        <div className="text-red-500 text p-2 px-4 border border-red-400 rounded-full">
+        <div className="text-red-500 text p-2 px-4 border border-red-400 rounded-full" onClick={handleRegister}>
           Registrations Open
         </div>
       </div>

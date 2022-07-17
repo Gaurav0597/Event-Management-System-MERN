@@ -1,21 +1,20 @@
-
-import express from "express"
+import express from 'express'
 const router = express.Router()
-import User from "../models/Auth.model.js"
+import User from '../models/Auth.model.js'
 
 router.post('/login', (req, res) => {
-    const {  email, password } = req.body
-       User.findOne({email:email},(err,user)=>{
-           if(user){
-                if(password===user.password){
-                    res.send({ message:"login succesfully",user:user})
-                }else{
-                    res.send({message:"Password didnt match"})
-                }
-           }else{
-            res.send({message:"User not Regiter"})
-           }
-       })
+  const { email, password } = req.body
+  User.findOne({ email: email }, (err, user) => {
+    if (user) {
+      if (password === user.password) {
+        res.send({ message: 'login succesfully', user: user })
+      } else {
+        res.send({ message: 'Password didnt match' })
+      }
+    } else {
+      res.send({ message: 'User not Regiter' })
+    }
+  })
 })
 router.post('/register', (req, res) => {
   console.log(req.body)
@@ -38,5 +37,22 @@ router.post('/register', (req, res) => {
       })
     }
   })
+})
+
+router.get('/user/techEvent/:id', async (req, res) => {
+  console.log(req.params.id, 'hello')
+  try {
+    console.log('hello2S')
+    const event = await User.findById(req.params.id)
+      .populate({
+        path: 'techEvent',
+        model: 'EventData',
+      })
+      .lean()
+      .exec()
+    res.status(200).json(event)
+  } catch (err) {
+    res.status(400).json(err)
+  }
 })
 export default router
