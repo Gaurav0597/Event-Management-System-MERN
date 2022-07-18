@@ -229,8 +229,11 @@ export const getUserRegisterTechEvents = (_id) => (dispatch) => {
     })
 }
 export const addTechEventToUser = (payload) => (dispatch) => {
+ 
+  const {pathname} =payload
+  console.log(pathname)
   axios
-    .post('http://localhost:5000/event/userData', payload)
+    .post(`http://localhost:5000${pathname}`, payload)
     .then((res) => {
       dispatch(getUserRegisterTechEvents(res.data._id))
       //   console.log(res.data)

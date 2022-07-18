@@ -9,11 +9,13 @@ const EventDetailsComponet = () => {
   const details = useSelector((state) => state.Event.individualData)
   const userId = useSelector((state) => state.Event.userId)
   var str=window.location.pathname
+  // console.log(window.location)
   // console.log(str)
    const handleRegister = () => {
     const obj = {
       _id :details._id,
-      userId : userId
+      userId : userId,
+      pathname:str
     }
     dispatch(addTechEventToUser(obj))
    }

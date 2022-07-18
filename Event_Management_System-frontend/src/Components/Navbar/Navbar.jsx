@@ -5,7 +5,7 @@ const Navbar = () => {
   const links = [
     { name: 'Home', link: '/' },
     { name: 'Courses', link: 'courses' },
-    { name: 'Practice', link: 'practice' },
+    { name: 'Practice', link: 'nonTechnicalEvent' },
     { name: 'Events', link: 'event' },
     { name: 'Industry Talk', link: 'industryTalk' },
   ]
