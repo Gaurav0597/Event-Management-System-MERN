@@ -87,7 +87,20 @@ export const nonTectdataFetch = (payload) => (dispatch) => {
       dispatch(NonTecheventDataFailure(err))
     })
 }
-
+export const NonTechEventDataPost = (payload) => (dispatch) => {
+  dispatch(NonTecheventDataRequest())
+  Axios.post('http://localhost:5000/nonTechnicalEvent', payload)
+    .then((response) => {
+      // console.log(response.data)
+    })
+    .then(() => {
+      dispatch(nonTectdataFetch())
+      // console.log(response.data)
+    })
+    .catch((error) => {
+      dispatch(NonTecheventDataFailure(error))
+    })
+}
 //---------------------------------------------------------------//
 
 // INDIVIDUAL EVENT ACTION CREATOR FUNCTIONS --------------------------------

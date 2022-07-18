@@ -3,7 +3,8 @@ import './App.css'
 import Login from './Components/auth/Login'
 import Register from './Components/auth/Register'
 import Courses from './Components/Courses/Courses'
-import AddEvent from './Components/Events/AddEvent'
+import AddNonTechEvent from './Components/Events/AddNonTechEvent'
+import AddTechEvent from './Components/Events/AddTechEvent'
 import EventDetailsComponet from './Components/Events/EventDetailsComponet'
 import NonTechnicalEvent from './Components/Events/NonTechnicalEvent'
 import TechnicalEvents from './Components/Events/TechnicalEvents'
@@ -16,7 +17,8 @@ function App() {
   return (
     <div className="bg-violet-900">
       <Navbar />
-      <AddEvent/>
+      {/* <AddTechEvent/> */}
+      <AddNonTechEvent/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login />}></Route>

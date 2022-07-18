@@ -6,11 +6,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login1, loginUser } from '../../Redux/Action'
 
 const Login = () => {
-  const userId=useSelector((state)=>state.Event.userId)
-  const email=useSelector((state)=>state.Event.userName)
+  const userId = useSelector((state) => state.Event.userId)
+  const email = useSelector((state) => state.Event.userName)
   console.log(email)
-  const navigate=useNavigate()
-  const dispatch=useDispatch()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -25,20 +25,22 @@ const Login = () => {
   }
 
   const login = () => {
-    axios.post('http://localhost:5000/login', user).then((res) => {
-      console.log(res.data)
-      dispatch(login1(res.data.user._id))
-      dispatch(loginUser(res.data.user.email))
-      navigate("/")
-      if(userId!==""){
-        alert(res.data.message)
-        navigate("/")
-      }
-    }).catch(function(err){
-      alert("invalid credentials")
-    })
+    axios
+      .post('http://localhost:5000/login', user)
+      .then((res) => {
+        console.log(res.data)
+        dispatch(login1(res.data.user._id))
+        dispatch(loginUser(res.data.user.email))
+        navigate('/')
+        if (userId !== '') {
+          alert(res.data.message)
+          navigate('/')
+        }
+      })
+      .catch(function (err) {
+        alert('invalid credentials')
+      })
   }
-
 
   return (
     <div className="login">
@@ -56,14 +58,15 @@ const Login = () => {
         value={user.password}
         onChange={handleChange}
         placeholder="Enter your Password"
-      ></input>
-     
-        {' '}
-        <div className="pl-8 pr-8 bg-blue-500 h-10 rounded-md text-white pt-2 font-medium" onClick={()=>{login()}}>
-         Login
-        </div>
-  
-
+      ></input>{' '}
+      <div
+        className="pl-8 pr-8 bg-blue-500 h-10 rounded-md text-white pt-2 font-medium"
+        onClick={() => {
+          login()
+        }}
+      >
+        Login
+      </div>
       <div>or</div>
       <Link to="/register">
         <div className="pl-8 pr-8 bg-blue-500 h-10 rounded-md text-white pt-2 font-medium">
@@ -71,7 +74,6 @@ const Login = () => {
         </div>
       </Link>
     </div>
-   
   )
 }
 

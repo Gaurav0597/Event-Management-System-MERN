@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { TechEventDataPost } from '../../Redux/Action'
+import { NonTechEventDataPost,} from '../../Redux/Action'
 
-const AddEvent = () => {
+const AddNonTechEvent = () => {
   const dispatch = useDispatch()
   const [addEvent, setAddEvent] = useState({
     EventName: '',
@@ -24,7 +24,7 @@ const AddEvent = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(addEvent)
-    dispatch(TechEventDataPost(addEvent))
+    dispatch(NonTechEventDataPost(addEvent))
   }
   return (
     <div className="w-3/5 m-auto">
@@ -321,4 +321,4 @@ const AddEvent = () => {
   )
 }
 
-export default AddEvent
+export default AddNonTechEvent
