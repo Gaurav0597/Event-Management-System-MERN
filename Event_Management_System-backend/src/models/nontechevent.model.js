@@ -23,6 +23,6 @@ const NonTechEventSchema = new mongoose.Schema(
     versionKey: false,
   },
 )
-const EventData = mongoose.model('NonTechEventData', NonTechEventSchema)
+const NonTechEventData = mongoose.model('NonTechEventData', NonTechEventSchema)
 
-export default EventData
+export default NonTechEventData

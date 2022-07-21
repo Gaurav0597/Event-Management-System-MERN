@@ -47,6 +47,9 @@ router.get('/user/techEvent/:id', async (req, res) => {
       .populate({
         path: 'techEvent',
         model: 'EventData',
+      }).populate({
+        path: 'nontechEvent',
+        model: 'NonTechEventData',
       })
       .lean()
       .exec()
