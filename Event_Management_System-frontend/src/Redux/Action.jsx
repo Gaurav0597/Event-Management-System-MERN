@@ -217,8 +217,8 @@ export const addEventTOUserFail = (payload) => {
     payload,
   }
 }
-export const getUserRegisterTechEvents = (_id) => (dispatch) => {
-  console.log('hello')
+export const getUserRegisterEvents = (_id) => (dispatch) => {
+  // console.log('hello')
   axios
     .get(`http://localhost:5000/user/techEvent/${_id}`)
     .then((res) => {
@@ -235,7 +235,7 @@ export const addTechEventToUser = (payload) => (dispatch) => {
   axios
     .post(`http://localhost:5000${pathname}`, payload)
     .then((res) => {
-      dispatch(getUserRegisterTechEvents(res.data._id))
+      dispatch(getUserRegisterEvents(res.data._id))
       //   console.log(res.data)
     })
     .catch((err) => {

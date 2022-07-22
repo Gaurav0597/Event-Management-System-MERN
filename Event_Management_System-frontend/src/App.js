@@ -12,6 +12,8 @@ import Footer from './Components/Footer/Footer'
 import Home from './Components/Home/Home'
 import IndustryTalk from './Components/IndustryTalk/IndustryTalk'
 import Navbar from './Components/Navbar/Navbar'
+import UserProfile from './Components/Profile/UserProfile'
+import AdminProfile from './Components/Profile/AdminProfile'
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       {/* <AddTechEvent/> */}
       {/* <AddNonTechEvent/> */}
       {/* <NonTechnicalEvent/> */}
+      <AdminProfile/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -30,6 +33,7 @@ function App() {
         <Route path="/nonTechnicalEvent/:id" element={<EventDetailsComponet/>}></Route>
         <Route path="/industryTalk" element={<IndustryTalk/>}></Route>
         <Route path="/courses" element={<Courses/>}></Route>
+        <Route path="/profile" element={<UserProfile/>}></Route>
         <Route></Route>
       </Routes>
       <Footer />

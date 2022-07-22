@@ -8,8 +8,8 @@ const Navbar = () => {
     { name: 'Practice', link: 'nonTechnicalEvent' },
     { name: 'Events', link: 'event' },
     { name: 'Industry Talk', link: 'industryTalk' },
+    { name: 'Profile', link: 'profile' },
   ]
-
   return (
     <div className="py-2 flex justify-between items-center px-8 z-10">
       <div className="text-red-500 w-1/6">
