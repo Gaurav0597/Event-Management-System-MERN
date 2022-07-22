@@ -5,8 +5,8 @@ const AdminProfile = () => {
     <div>
       <div className="md:w-4/5 mx-auto bg-gray-100/10 flex p-4 my-6">
         <div className="w-3/5 ">
-            <div className="ml-32">
-               
+            <div className="ml-32 ">
+               <img className="h-[60px] w-[150px] rounded-full" src="./201.webp" alt="" />
             </div>
           <div>
             <h1
@@ -22,10 +22,10 @@ const AdminProfile = () => {
               </h1>{' '}
             </h1>
           </div>
-          <div className=" ml-32 leading-snug">
-            <p className="text-2xl text-gray-100 leading-loose">
+          <div className=" ml-32 leading-normal">
+            <p className="text-lg text-gray-100 leading-loose">
               A Full Stack Web Developer 🚀 from Wardha, India, currently 💻
-              doing my Full Stack Development from Masai School. I am passionate
+              doing Full Stack Development from Masai School. I am passionate
               about technology and want to learn & explore new technologies. I
               love travelling and explore the new places
             </p>
@@ -36,7 +36,7 @@ const AdminProfile = () => {
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="w-10 h-10 text-white"
+                className="w-9 h-9 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -54,7 +54,7 @@ const AdminProfile = () => {
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="w-10 h-10 text-white"
+                className="w-9 h-9 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -72,7 +72,7 @@ const AdminProfile = () => {
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="w-10 h-10 text-white"
+                className="w-9 h-9 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -86,7 +86,7 @@ const AdminProfile = () => {
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
-                className="w-10 h-10 text-white"
+                className="w-9 h-9 text-white"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -104,9 +104,9 @@ const AdminProfile = () => {
         <div className="w-2/5 p-16 ml-24">
           <img
          
-            src="https://pbs.twimg.com/profile_images/1172820413715378176/PJVEwuGx_400x400.jpg"
+            src="./Gaurav.png"
             alt="speaker"
-            className="h-[300px] w-[300px] rounded-full ml-36"
+            className="h-[300px] w-[300px] rounded-full "
           />
         </div>
       </div>

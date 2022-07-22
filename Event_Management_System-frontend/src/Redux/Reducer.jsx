@@ -9,6 +9,7 @@ const initState={
     NonTechnicalEvent:[],
     individualData:{},
     coursesData:[],
+    userData:{}
 }
 
 const EventReducer=(state=initState,{type,payload}) =>{
@@ -119,7 +120,28 @@ const EventReducer=(state=initState,{type,payload}) =>{
         userName:payload
       }
       //--------------------------------------------------------------------------------------------------------
-        default:
+  
+    //    Get Userndata
+      case types.GET_USER_TECH_DATA_REQUEST:
+        return{
+           ...state,
+           loading:true,
+           error:""
+        }
+        case types.GET_USER_TECH_DATA_SUCCESS:
+           return{
+               ...state,
+               loading:false,
+               userData:payload,
+               error:""
+           }
+       case types.GET_USER_TECH_DATA_FAILURE:
+           return {
+               ...state,
+               loading:false,
+               error:payload
+           }
+      default:
             return state
     }
 }

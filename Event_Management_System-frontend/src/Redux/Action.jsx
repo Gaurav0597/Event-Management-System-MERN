@@ -222,7 +222,8 @@ export const getUserRegisterEvents = (_id) => (dispatch) => {
   axios
     .get(`http://localhost:5000/user/techEvent/${_id}`)
     .then((res) => {
-      console.log(res.data)
+       const obj={techdata:res.data.techEvent,nontechData:res.data.nontechEvent}
+       dispatch(addEventTOUserSuc(obj))
     })
     .catch((err) => {
       console.log(err)
