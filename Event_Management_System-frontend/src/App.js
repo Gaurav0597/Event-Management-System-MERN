@@ -22,7 +22,7 @@ function App() {
       {/* <AddTechEvent/> */}
       {/* <AddNonTechEvent/> */}
       {/* <NonTechnicalEvent/> */}
-      <AdminProfile/>
+      {/* <AdminProfile/> */}
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login />}></Route>
