@@ -3,10 +3,10 @@ import * as types from "./ActionType.jsx"
 const initState={
     error:"",
     loading:false,
-    userId: '',
-    userName:"",
-    adminId:'',
-    adminName:"",
+    userId: null,
+    userName:null,
+    adminId:null,
+    adminName:null,
     TechnicalEvent:[],
     NonTechnicalEvent:[],
     individualData:{},
@@ -113,24 +113,32 @@ const EventReducer=(state=initState,{type,payload}) =>{
         return {
           ...state,
           userId: payload,
+          adminId:null,
+          adminName:null,
         }
      //username
      case types.GETUSERNAME:
       return {
         ...state,
-        userName:payload
+        userName:payload,
+        adminId:null,
+        adminName:null,
       }
      
      case types.GETADMINID:
         return {
           ...state,
           adminId: payload,
+          userId: null,
+          userName:null,
         }
      //username
      case types.GETADMINNAME:
       return {
         ...state,
-        adminName:payload
+        adminName:payload,
+        userId: null,
+        userName:null,
       }
       //--------------------------------------------------------------------------------------------------------
   

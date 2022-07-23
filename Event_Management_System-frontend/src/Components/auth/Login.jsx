@@ -6,11 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login1, loginAdminId, loginAdminName, loginUser } from '../../Redux/Action'
 
 const Login = () => {
-  const userId = useSelector((state) => state.Event.userId)
-  const adminId = useSelector((state) => state.Event.adminId)
-  const adminName = useSelector((state) => state.Event.adminName)
-  console.log(adminId,adminName)
-  console.log(userId)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [user, setUser] = useState({
@@ -25,26 +20,24 @@ const Login = () => {
       [name]: value,
     })
   }
-
   const login = () => {
     axios
       .post('http://localhost:5000/login', user)
       .then((res) => {
-        // console.log(res.data)
+        console.log(res.data)
         if(res.data.user.email=="gauravpetkar28@gmail.com"){
-          // console.log("hello i am gaurav")
           dispatch(loginAdminId(res.data.user._id))
           dispatch(loginAdminName(res.data.user.name))
         }else{
-          // console.log("i am user")
           dispatch(login1(res.data.user._id))
           dispatch(loginUser(res.data.user.name))
         }
-        // navigate('/')
-        if (userId ||adminId  !== '') {
-          alert(res.data.message)
-          navigate('/')
+    
+        if(res.data.message=="login succesfully"){
+            alert("Login succesfully")
+              navigate('/')   
         }
+      
       })
       .catch(function (err) {
         alert('invalid credentials')
