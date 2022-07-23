@@ -30,6 +30,15 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+router.delete('/:id',async (req, res) => {
+   console.log(req.params.id)
+   EventSchema.deleteOne({_id:req.params.id}).then(()=>{
+    res.send("Event deleted")
+   }).catch((err) => {
+    res.send("An error Occured")
+   })
+})
+
 router.post('/:id', async (req, res) => {
   console.log(req.body.userId)
   try {

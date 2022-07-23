@@ -6,7 +6,7 @@ const UserProfile = () => {
     const userId = useSelector((state) => state.Event.userId)
     const userName = useSelector((state) => state.Event.userName)
     const userdata = useSelector((state) => state.Event.userData)
-    console.log(userdata)
+    // console.log(userdata)
     const dispatch= useDispatch()
     useEffect(()=>{
      dispatch(getUserRegisterEvents(userId))

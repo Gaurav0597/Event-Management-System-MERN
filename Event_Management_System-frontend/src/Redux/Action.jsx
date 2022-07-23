@@ -126,7 +126,7 @@ const GetIndividualEventDataFailure = (payload) => {
   }
 }
 
-// write axios request here for indivudual Event  data
+// write axios request here for to get indivudual Event  data
 
 // for Technical event And nontechnical data
 export const GetIndividualTechEventData = (payload) => (dispatch) => {
@@ -140,6 +140,17 @@ export const GetIndividualTechEventData = (payload) => (dispatch) => {
     .catch((error) => {
       dispatch(GetIndividualEventDataFailure(error))
     })
+}
+
+// write axios request here for to delete indivudual Event  data
+  
+export const deleteIndividualEvent=(payload)=>(dispatch) => {
+
+     Axios.delete(`http://localhost:5000${payload}`).then((response) => {
+       
+     }).catch((error) => {
+      console.log("error")
+     })
 }
 
 //----------------------------------------------------------------------------//

@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { addTechEventToUser, GetIndividualTechEventData } from '../../Redux/Action'
+import { addTechEventToUser, GetIndividualTechEventData ,deleteIndividualEvent} from '../../Redux/Action'
 
 const EventDetailsComponet = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
   const details = useSelector((state) => state.Event.individualData)
   const userId = useSelector((state) => state.Event.userId)
+  const adminId = useSelector((state) => state.Event.adminId)
   var str=window.location.pathname
-  // console.log(window.location)
-  // console.log(str)
    const handleRegister = () => {
     const obj = {
       _id :details._id,
@@ -18,6 +17,15 @@ const EventDetailsComponet = () => {
       pathname:str
     }
     dispatch(addTechEventToUser(obj))
+   }
+ 
+   const handleEventdelete=()=>{
+    // const deleteobj={
+    // //   id:details._id,
+    // //   pathname:str
+    //   }
+      dispatch(deleteIndividualEvent(str))
+
    }
 
 
@@ -37,9 +45,12 @@ const EventDetailsComponet = () => {
             alt="eventdetail"
           />
         </div>
-        <div className="text-red-500 text p-2 px-4 border border-red-400 rounded-full" onClick={handleRegister}>
+        {adminId!==null?<div className="text-red-500 text p-2 px-4 border border-red-400 rounded-full" onClick={handleEventdelete}>
+          Delete Event
+        </div>: <div className="text-red-500 text p-2 px-4 border border-red-400 rounded-full" onClick={handleRegister}>
           Registrations Open
-        </div>
+        </div>}
+       
       </div>
       <div className="mt-4 overflow-auto xl:w-8/12 text-gray-200 text-sm bg-black/10 p-4 min-h-[300px]">
         <div className="grid auto-cols-auto md:grid-cols-3 gap-4">

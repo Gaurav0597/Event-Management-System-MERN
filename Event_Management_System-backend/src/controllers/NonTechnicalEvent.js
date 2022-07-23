@@ -22,6 +22,14 @@ router.post('', async (req, res) => {
       return res.status(500).send(error.message)
     }
   })
+  router.delete('/:id',async (req, res) => {
+    console.log(req.params.id)
+    NonTechEventSchema.deleteOne({_id:req.params.id}).then(()=>{
+     res.send("Event deleted")
+    }).catch((err) => {
+     res.send("An error Occured")
+    })
+ })
   
   router.get("/:id",async(req,res)=>{
     try{
@@ -32,6 +40,8 @@ router.post('', async (req, res) => {
         return res.status(500).send(err.message)
     }
   })
+
+
   router.post('/:id', async (req, res) => {
     console.log(req.body.userId)
     try {

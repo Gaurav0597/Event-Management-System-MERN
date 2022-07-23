@@ -33,7 +33,7 @@ const EventComponent = (props) => {
                 className="max-h-full max-w-full m-auto"
               />
             </div>
-            <p className="text-white text-justify">{e.Introduction}</p>
+            <p className="text-white">{e.Introduction}</p>
             <Link to={`${str}/${e._id}`}>
               <button
                 className="text-white rounded-0
