@@ -28,7 +28,7 @@ const UserProfile = () => {
             </h1>
       </div>
        <h1 className="text-2xl text-center md:text-left md:text-4xl text-white mb-2 ml-14">
-             Registered Technical Events
+             Registered Technical Events ( {userdata.techdata.length} )
        </h1>
        <div className="xl:w-11/12 xl:m-auto gap-8 xl:flex-nowrap xl:justify-none grid md:grid-cols-4">
         {userdata.techdata.map((e, i) => (
@@ -64,7 +64,7 @@ const UserProfile = () => {
         ))}
       </div>
       <h1 className="text-2xl text-center md:text-left md:text-4xl text-white mb-2 ml-14">
-             Registered Non-Technical Events
+             Registered Non-Technical Events ( {userdata.nontechData.length} )
        </h1>
        <div className="xl:w-11/12 xl:m-auto gap-8 xl:flex-nowrap xl:justify-none grid md:grid-cols-4">
         {userdata.nontechData.map((e, i) => (

@@ -5,6 +5,8 @@ const initState={
     loading:false,
     userId: '',
     userName:"",
+    adminId:'',
+    adminName:"",
     TechnicalEvent:[],
     NonTechnicalEvent:[],
     individualData:{},
@@ -13,9 +15,8 @@ const initState={
 }
 
 const EventReducer=(state=initState,{type,payload}) =>{
-    // console.log(payload)
+    // console.log("payload",payload)
     switch(type){
-
         //Technical event data cases
         case types.TECHNICALEVENT_DATA_REQUEST:
             return {
@@ -118,6 +119,18 @@ const EventReducer=(state=initState,{type,payload}) =>{
       return {
         ...state,
         userName:payload
+      }
+     
+     case types.GETADMINID:
+        return {
+          ...state,
+          adminId: payload,
+        }
+     //username
+     case types.GETADMINNAME:
+      return {
+        ...state,
+        adminName:payload
       }
       //--------------------------------------------------------------------------------------------------------
   

@@ -3,12 +3,14 @@ import './Login.css'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { login1, loginUser } from '../../Redux/Action'
+import { login1, loginAdminId, loginAdminName, loginUser } from '../../Redux/Action'
 
 const Login = () => {
   const userId = useSelector((state) => state.Event.userId)
-  const email = useSelector((state) => state.Event.userName)
-  console.log(email)
+  const adminId = useSelector((state) => state.Event.adminId)
+  const adminName = useSelector((state) => state.Event.adminName)
+  console.log(adminId,adminName)
+  console.log(userId)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [user, setUser] = useState({
@@ -28,11 +30,18 @@ const Login = () => {
     axios
       .post('http://localhost:5000/login', user)
       .then((res) => {
-        console.log(res.data)
-        dispatch(login1(res.data.user._id))
-        dispatch(loginUser(res.data.user.email))
-        navigate('/')
-        if (userId !== '') {
+        // console.log(res.data)
+        if(res.data.user.email=="gauravpetkar28@gmail.com"){
+          // console.log("hello i am gaurav")
+          dispatch(loginAdminId(res.data.user._id))
+          dispatch(loginAdminName(res.data.user.name))
+        }else{
+          // console.log("i am user")
+          dispatch(login1(res.data.user._id))
+          dispatch(loginUser(res.data.user.name))
+        }
+        // navigate('/')
+        if (userId ||adminId  !== '') {
           alert(res.data.message)
           navigate('/')
         }

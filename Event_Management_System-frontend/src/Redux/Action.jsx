@@ -197,7 +197,20 @@ export const loginUser = (payload) => {
     payload,
   }
 }
-
+export const loginAdminId=(payload)=>{
+  // console.log(payload)
+  return {
+    type:types.GETADMINID,
+    payload,
+  }
+}
+export const loginAdminName=(payload)=>{
+  // console.log(payload)
+  return {
+    type:types.GETADMINNAME,
+    payload,
+  }
+}
 //---------------------------------------------------------------------------------------------------------//
 
 export const addEventTOUserReq = () => {

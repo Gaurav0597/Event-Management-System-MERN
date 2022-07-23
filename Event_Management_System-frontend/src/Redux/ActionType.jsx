@@ -21,6 +21,8 @@ export const COURSES_DATA_FAILURE = 'COURSES_DATA_FAILURE'
 //login id and username
 export const GETUSERID = 'GETUSERID'
 export const GETUSERNAME = 'GETUSERNAME'
+export const GETADMINID="GETADMINID"
+export const GETADMINNAME="GETADMINNAME"
 
 //addEventTOUser Data
 export const GET_USER_TECH_DATA_REQUEST = 'GET_USER_TECH_DATA_REQUEST'
