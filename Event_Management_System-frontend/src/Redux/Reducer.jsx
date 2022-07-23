@@ -11,7 +11,8 @@ const initState={
     NonTechnicalEvent:[],
     individualData:{},
     coursesData:[],
-    userData:{}
+    userData:{},
+    Alluser:[]
 }
 
 const EventReducer=(state=initState,{type,payload}) =>{
@@ -162,6 +163,26 @@ const EventReducer=(state=initState,{type,payload}) =>{
                loading:false,
                error:payload
            }
+     //----------------------------------get all user data-------------------------------//
+        case types.GET_ALL_USER_DATA_REQUEST:
+            return{
+                ...state,
+                loading:true,
+                error:""
+            }
+        case types.GET_ALL_USER_DATA_SUCCESS:
+            return {
+                ...state,
+                loading:false,
+                error:"",
+                Alluser:payload
+            }
+        case types.GET_ALL_USER_DATA_FAILURE:
+            return{
+                ...state,
+                loading:false,
+                error:payload
+            }
       default:
             return state
     }

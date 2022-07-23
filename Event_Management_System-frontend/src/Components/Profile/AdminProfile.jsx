@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getAllUserDataFromBackend } from '../../Redux/Action'
+import {useDispatch, useSelector} from "react-redux"
 
 const AdminProfile = () => {
+  const [ShowUserData,setShowUserData]=useState(false)
+  const Alluser = useSelector((state) => state.Event.Alluser)
+  console.log("Alluser",Alluser)
+  const dispatch=useDispatch()
+  const getUserdata = () =>{
+    dispatch(getAllUserDataFromBackend())
+  }
+  useEffect(() => {
+    getUserdata()
+  },[])
   return (
     <div>
       <div className="md:w-4/5 mx-auto bg-gray-100/10 flex p-4 my-6">
@@ -110,8 +122,22 @@ const AdminProfile = () => {
           />
         </div>
       </div>
+      <div className="flex justify-between w-4/5 m-auto  bg-gray-100/10">
+        <div onClick={()=>setShowUserData(true)}>GET USER DATA</div>
+        <div>ADD TECHNICAL EVENT</div>
+        <div>ADD NONTECHNICAL EVENT</div>
+      </div>
+      {ShowUserData==true?<div className="w-4/5 m-auto">
+            <div className="flex">
+              <h1>garav</h1>
+              <button>petakr</button>
+            </div>
+      </div>:null}
+   
+
     </div>
   )
 }
 
 export default AdminProfile
+// onClick={setShowUserData(true)}

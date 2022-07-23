@@ -143,14 +143,13 @@ export const GetIndividualTechEventData = (payload) => (dispatch) => {
 }
 
 // write axios request here for to delete indivudual Event  data
-  
-export const deleteIndividualEvent=(payload)=>(dispatch) => {
 
-     Axios.delete(`http://localhost:5000${payload}`).then((response) => {
-       
-     }).catch((error) => {
-      console.log("error")
-     })
+export const deleteIndividualEvent = (payload) => (dispatch) => {
+  Axios.delete(`http://localhost:5000${payload}`)
+    .then((response) => {})
+    .catch((error) => {
+      console.log('error')
+    })
 }
 
 //----------------------------------------------------------------------------//
@@ -208,17 +207,17 @@ export const loginUser = (payload) => {
     payload,
   }
 }
-export const loginAdminId=(payload)=>{
+export const loginAdminId = (payload) => {
   // console.log(payload)
   return {
-    type:types.GETADMINID,
+    type: types.GETADMINID,
     payload,
   }
 }
-export const loginAdminName=(payload)=>{
+export const loginAdminName = (payload) => {
   // console.log(payload)
   return {
-    type:types.GETADMINNAME,
+    type: types.GETADMINNAME,
     payload,
   }
 }
@@ -246,16 +245,18 @@ export const getUserRegisterEvents = (_id) => (dispatch) => {
   axios
     .get(`http://localhost:5000/user/techEvent/${_id}`)
     .then((res) => {
-       const obj={techdata:res.data.techEvent,nontechData:res.data.nontechEvent}
-       dispatch(addEventTOUserSuc(obj))
+      const obj = {
+        techdata: res.data.techEvent,
+        nontechData: res.data.nontechEvent,
+      }
+      dispatch(addEventTOUserSuc(obj))
     })
     .catch((err) => {
       console.log(err)
     })
 }
 export const addTechEventToUser = (payload) => (dispatch) => {
- 
-  const {pathname} =payload
+  const { pathname } = payload
   console.log(pathname)
   axios
     .post(`http://localhost:5000${pathname}`, payload)
@@ -265,5 +266,42 @@ export const addTechEventToUser = (payload) => (dispatch) => {
     })
     .catch((err) => {
       console.log(err)
+    })
+}
+
+//-----------------------------------------------------------------------------------------------//
+
+// GET ALL USER DATA ACTION CREATOR FUNCTION--------------------------------
+
+const getAllUserDataRequest = (payload) => {
+  return {
+    type: types.GET_ALL_USER_DATA_REQUEST,
+    payload,
+  }
+}
+
+const getAllUserDataSuccess = (payload) => {
+  return {
+    type: types.GET_ALL_USER_DATA_SUCCESS,
+    payload,
+  }
+}
+
+const getAllUserDataFailure = (payload) => {
+  return {
+    type: types.GET_ALL_USER_DATA_FAILURE,
+    payload,
+  }
+}
+// write axios request here for to delete indivudual Event  data
+
+export const getAllUserDataFromBackend = (payload) => (dispatch) => {
+  dispatch(getAllUserDataRequest())
+  Axios.get('http://localhost:5000/getuser')
+    .then((res) => {
+      dispatch(getAllUserDataSuccess(res.data))
+    })
+    .catch((err) => {
+      dispatch(getAllUserDataFailure())
     })
 }

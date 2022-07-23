@@ -58,4 +58,14 @@ router.get('/user/techEvent/:id', async (req, res) => {
     res.status(400).json(err)
   }
 })
+//-------------------get request for all user------------------------------------
+
+router.get('/getuser', async (req, res) => {
+  try {
+    const data = await User.find({}).lean().exec()
+    res.status(200).json(data)
+  } catch (error) {
+    console.log(error)
+  }
+})
 export default router
