@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { getAllUserDataFromBackend } from '../../Redux/Action'
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
+import ShowUser from './ShowUser'
 
 const AdminProfile = () => {
-  const [ShowUserData,setShowUserData]=useState(false)
+  const [ShowUserData, setShowUserData] = useState(false)
   const Alluser = useSelector((state) => state.Event.Alluser)
-  console.log("Alluser",Alluser)
-  const dispatch=useDispatch()
-  const getUserdata = () =>{
+  const updatedUser = Alluser.filter((e) => {
+    return e.email != 'gauravpetkar28@gmail.com'
+  })
+  // console.log(updatedUser)
+  const dispatch = useDispatch()
+  const getUserdata = () => {
     dispatch(getAllUserDataFromBackend())
   }
   useEffect(() => {
     getUserdata()
-  },[])
+  }, [])
   return (
     <div>
       <div className="md:w-4/5 mx-auto bg-gray-100/10 flex p-4 my-6">
         <div className="w-3/5 ">
-            <div className="ml-32 ">
-               <img className="h-[60px] w-[150px] rounded-full" src="./201.webp" alt="" />
-            </div>
+          <div className="ml-32 ">
+            <img
+              className="h-[60px] w-[150px] rounded-full"
+              src="./201.webp"
+              alt=""
+            />
+          </div>
           <div>
             <h1
               className="title text-4xl font-semibold flex text-white pb-8 mt-8 ml-32"
@@ -115,7 +123,6 @@ const AdminProfile = () => {
         </div>
         <div className="w-2/5 p-16 ml-24">
           <img
-         
             src="./Gaurav.png"
             alt="speaker"
             className="h-[300px] w-[300px] rounded-full "
@@ -123,18 +130,34 @@ const AdminProfile = () => {
         </div>
       </div>
       <div className="flex justify-between w-4/5 m-auto  bg-gray-100/10">
-        <div onClick={()=>setShowUserData(true)}>GET USER DATA</div>
+        <div onClick={() => setShowUserData(true)}>GET USER DATA</div>
         <div>ADD TECHNICAL EVENT</div>
         <div>ADD NONTECHNICAL EVENT</div>
       </div>
-      {ShowUserData==true?<div className="w-4/5 m-auto">
-            <div className="flex">
-              <h1>garav</h1>
-              <button>petakr</button>
-            </div>
-      </div>:null}
-   
+      {ShowUserData == true ? (
 
+        <ShowUser updatedUser={updatedUser}/>
+        // <div className="w-4/5 m-auto p-8">
+        //   {updatedUser.map((e) => {
+        //     return (
+        //       <div
+        //         className="flex p-2 w-4/5 mb-2 justify-around rounded-full duration-150"
+        //       >
+        //         <h1 className="text-white text-2xl">{e.name}</h1>
+        //         <h1 className="text-white text-2xl">{e.email}</h1>
+        //         <button
+        //           type="button"
+        //           data-mdb-ripple="true"
+        //           data-mdb-ripple-color="light"
+        //           className="inline-block px-6 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+        //         >
+        //           Delete User
+        //         </button>
+        //       </div>
+        //     )
+        //   })}
+        // </div>
+      ) : null}
     </div>
   )
 }
