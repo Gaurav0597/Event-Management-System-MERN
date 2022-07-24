@@ -18,14 +18,14 @@ const Navbar = () => {
         {/* imagediv */}
         imageDiv
       </div>
-      <div className="flex justify-between items-center w-4/6">
+      <div className="flex ml-16 items-center w-4/6">
         {/* pagesDiv */}
         {links.map((item) => {
           return (
             <NavLink
               to={item.link}
               className={({ isActive }) => {
-                return ` text-gray-200 border-b border-purple-500 tracking-widest p-2 px-8 transition hover:bg-purple-400 font-bold hover:scale-125 transform ${
+                return ` text-gray-200 border-b border-purple-500 tracking-widest p-2 px-8 mr-4 transition hover:bg-purple-400 font-bold hover:scale-125 transform ${
                   isActive ? 'bg-purple-600' : ''
                 }`
               }}
