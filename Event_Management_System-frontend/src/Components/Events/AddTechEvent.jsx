@@ -27,7 +27,7 @@ const AddTechEvent = () => {
     dispatch(TechEventDataPost(addEvent))
   }
   return (
-    <div className="w-3/5 m-auto border-zinc-400 border p-8 rounded-2xl ">
+    <div className="w-3/5 m-auto mt-16 border-zinc-400 border p-8 rounded-2xl ">
       <h1
         className="title text-4xl font-semibold  text-sky-500 pb-4 ml-4 mt-0 text-center"
         style={{ fontFamily: 'Quicksand' }}

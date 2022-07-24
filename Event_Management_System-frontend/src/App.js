@@ -15,6 +15,7 @@ import Navbar from './Components/Navbar/Navbar'
 import UserProfile from './Components/Profile/UserProfile'
 import AdminProfile from './Components/Profile/AdminProfile'
 import Profile from './Components/Profile/Profile'
+import LoginUser from './Components/auth/LoginUser'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       {/* <AdminProfile/> */}
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/login" element={<LoginUser />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/event" element={<TechnicalEvents/>}></Route>
         <Route path="/event/:id" element={<EventDetailsComponet/>}></Route>

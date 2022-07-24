@@ -149,10 +149,10 @@ const AdminProfile = () => {
           />
         </div>
       </div>
-      <div className="flex justify-between w-4/5 m-auto  bg-gray-100/10">
-        <div onClick={setUserData}>GET USER DATA</div>
-        <div onClick={AddTechEventdata}>ADD TECHNICAL EVENT</div>
-        <div onClick={AddNonTechEventdata}>ADD NONTECHNICAL EVENT</div>
+      <div className="flex justify-around w-4/5 m-auto  bg-gray-100/10">
+        <div className="text-center text-xl text-sky-400" onClick={setUserData}>GET USER DATA</div>
+        <div className="  text-center text-xl text-sky-400" onClick={AddTechEventdata}>ADD TECHNICAL EVENT</div>
+        <div className="text-center text-xl text-sky-400" onClick={AddNonTechEventdata}>ADD NONTECHNICAL EVENT</div>
       </div>
       {/* <AddTechEvent/> */}
       {ShowUserData == true ? (
