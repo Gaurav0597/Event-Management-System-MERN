@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="bg-violet-900">
       <Navbar />
-      {/* <AddTechEvent/> */}
-      {/* <AddNonTechEvent/> */}
+      {/* <AddTechEvent/>
+      <AddNonTechEvent/> */}
       {/* <NonTechnicalEvent/> */}
       {/* <AdminProfile/> */}
       <Routes>

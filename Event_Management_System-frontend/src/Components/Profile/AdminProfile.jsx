@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { getAllUserDataFromBackend } from '../../Redux/Action'
 import { useDispatch, useSelector } from 'react-redux'
 import ShowUser from './ShowUser'
+import AddNonTechEvent from './Components/Events/AddNonTechEvent'
+import AddTechEvent from './Components/Events/AddTechEvent'
 
 const AdminProfile = () => {
   const [ShowUserData, setShowUserData] = useState(false)
+  const [Addtech,setAddtech]=useState(false)
+  const [Addnontech,setAddnontech]=useState(false)
   const Alluser = useSelector((state) => state.Event.Alluser)
   const updatedUser = Alluser.filter((e) => {
     return e.email != 'gauravpetkar28@gmail.com'
@@ -13,6 +17,21 @@ const AdminProfile = () => {
   const dispatch = useDispatch()
   const getUserdata = () => {
     dispatch(getAllUserDataFromBackend())
+  }
+  const setUserData=()=>{
+    setShowUserData(true)
+    setAddtech(false)
+    setAddnontech(false)
+  }
+  const AddTechEvent=()=>{
+    setShowUserData(false)
+    setAddtech(true)
+    setAddnontech(false)
+  }
+  const AddNonTechEvent=()=>{
+    setShowUserData(false)
+    setAddtech(false)
+    setAddnontech(true)
   }
   useEffect(() => {
     getUserdata()
@@ -130,15 +149,25 @@ const AdminProfile = () => {
         </div>
       </div>
       <div className="flex justify-between w-4/5 m-auto  bg-gray-100/10">
-        <div onClick={() => setShowUserData(true)}>GET USER DATA</div>
-        <div>ADD TECHNICAL EVENT</div>
-        <div>ADD NONTECHNICAL EVENT</div>
+        <div onClick={setUserData}>GET USER DATA</div>
+        <div onClick={AddTechEvent}>ADD TECHNICAL EVENT</div>
+        <div onClick={AddNonTechEvent}>ADD NONTECHNICAL EVENT</div>
       </div>
       {ShowUserData == true ? (
         <div>
          <ShowUser updatedUser={updatedUser}/>
         </div>
       ) : null}
+      {Addtech==true ? (
+        <div>
+            <AddTechEvent/>
+        </div>
+      ): null}
+       {Addnontech==true ? (
+        <div>
+          <AddNonTechEvent/>
+        </div>
+      ): null}
     </div>
   )
 }

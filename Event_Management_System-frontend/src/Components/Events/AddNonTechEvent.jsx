@@ -31,7 +31,13 @@ const AddNonTechEvent = () => {
     dispatch(NonTechEventDataPost(addEvent,toast))
   }
   return (
-    <div className="w-3/5 m-auto">
+    <div className="w-3/5 m-auto border-zinc-400 border p-8 rounded-2xl text-center ">
+       <h1
+        className="title text-4xl font-semibold  text-sky-500 pb-4 ml-4 mt-0"
+        style={{ fontFamily: 'Quicksand' }}
+      >
+         Add Non Technical Event Here
+      </h1>{' '}
       <form>
         <div class="grid gap-4 mb-6 md:grid-cols-2">
           <div>

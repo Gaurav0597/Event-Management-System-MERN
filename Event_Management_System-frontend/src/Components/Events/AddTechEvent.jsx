@@ -27,7 +27,13 @@ const AddTechEvent = () => {
     dispatch(TechEventDataPost(addEvent))
   }
   return (
-    <div className="w-3/5 m-auto">
+    <div className="w-3/5 m-auto border-zinc-400 border p-8 rounded-2xl ">
+      <h1
+        className="title text-4xl font-semibold  text-sky-500 pb-4 ml-4 mt-0 text-center"
+        style={{ fontFamily: 'Quicksand' }}
+      >
+         Add Technical Event Here
+      </h1>{' '}
       <form>
         <div class="grid gap-4 mb-6 md:grid-cols-2">
           <div>
@@ -198,7 +204,7 @@ const AddTechEvent = () => {
               for="visitors"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-           Fees
+              Fees
             </label>
             <input
               type="number"
@@ -212,13 +218,13 @@ const AddTechEvent = () => {
             />
           </div>
         </div>
-     
+
         <div>
           <label
             for="visitors"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
           >
-        Rule 1
+            Rule 1
           </label>
           <input
             type="text"
@@ -254,7 +260,7 @@ const AddTechEvent = () => {
             for="visitors"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
           >
-        Rule 3
+            Rule 3
           </label>
           <input
             type="text"
@@ -272,7 +278,7 @@ const AddTechEvent = () => {
             for="visitors"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
           >
-           Rule 4
+            Rule 4
           </label>
           <input
             type="text"
@@ -301,21 +307,18 @@ const AddTechEvent = () => {
             onChange={(event) => {
               setAddEvent({ ...addEvent, Rule5: event.target.value })
             }}
-    
           />
         </div>
-       
-       
-       <div className="flex items-center justify-center">
-       <button
-          type="submit"
-          onClick={handleSubmit}
-          className=" text-white mt-6  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Submit
-        </button>
-       </div>
-      
+
+        <div className="flex items-center justify-center">
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className=" text-white mt-6  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   )
