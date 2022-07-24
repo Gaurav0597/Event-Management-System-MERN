@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { NonTechEventDataPost,} from '../../Redux/Action'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddNonTechEvent = () => {
@@ -26,7 +28,7 @@ const AddNonTechEvent = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log(addEvent)
-    dispatch(NonTechEventDataPost(addEvent))
+    dispatch(NonTechEventDataPost(addEvent,toast))
   }
   return (
     <div className="w-3/5 m-auto">
@@ -316,6 +318,7 @@ const AddNonTechEvent = () => {
         >
           Submit
         </button>
+        <ToastContainer/>
        </div>
       
       </form>

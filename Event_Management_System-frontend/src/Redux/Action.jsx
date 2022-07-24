@@ -2,6 +2,7 @@ import * as types from './ActionType.jsx'
 import Axios from 'axios'
 import axios from 'axios'
 
+
 //technicalevent data actioncreation funtion
 
 const TecheventDataRequest = (payload) => {
@@ -87,20 +88,26 @@ export const nonTectdataFetch = (payload) => (dispatch) => {
       dispatch(NonTecheventDataFailure(err))
     })
 }
-export const NonTechEventDataPost = (payload) => (dispatch) => {
+export const NonTechEventDataPost = (payload,toast) => (dispatch) => {
   dispatch(NonTecheventDataRequest())
-  Axios.post('http://localhost:5000/nonTechnicalEvent', payload)
+  Axios.post('http://localhost:500/nonTechnicalEvent', payload)
     .then((response) => {
         console.log(response)
-        alert("New event Added")
+        toast("New event Added successfully",{
+          type:"success"
+     })
+
     })
     .then(() => {
       dispatch(nonTectdataFetch())
       // console.log(response.data)
     })
     .catch((error) => {
-      alert("New event not added")
+      toast("New event has not Added unfortunately",{
+           type:"error"
+      })
       dispatch(NonTecheventDataFailure(error))
+    
     })
 }
 //---------------------------------------------------------------//
