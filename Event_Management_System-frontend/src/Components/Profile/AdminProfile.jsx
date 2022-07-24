@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { getAllUserDataFromBackend } from '../../Redux/Action'
 import { useDispatch, useSelector } from 'react-redux'
 import ShowUser from './ShowUser'
-import AddNonTechEvent from './Components/Events/AddNonTechEvent'
-import AddTechEvent from './Components/Events/AddTechEvent'
+import AddTechEvent from '../Events/AddTechEvent'
+import AddNonTechEvent from '../Events/AddNonTechEvent'
+
 
 const AdminProfile = () => {
   const [ShowUserData, setShowUserData] = useState(false)
@@ -23,12 +24,12 @@ const AdminProfile = () => {
     setAddtech(false)
     setAddnontech(false)
   }
-  const AddTechEvent=()=>{
+  const AddTechEventdata=()=>{
     setShowUserData(false)
     setAddtech(true)
     setAddnontech(false)
   }
-  const AddNonTechEvent=()=>{
+  const AddNonTechEventdata=()=>{
     setShowUserData(false)
     setAddtech(false)
     setAddnontech(true)
@@ -150,9 +151,10 @@ const AdminProfile = () => {
       </div>
       <div className="flex justify-between w-4/5 m-auto  bg-gray-100/10">
         <div onClick={setUserData}>GET USER DATA</div>
-        <div onClick={AddTechEvent}>ADD TECHNICAL EVENT</div>
-        <div onClick={AddNonTechEvent}>ADD NONTECHNICAL EVENT</div>
+        <div onClick={AddTechEventdata}>ADD TECHNICAL EVENT</div>
+        <div onClick={AddNonTechEventdata}>ADD NONTECHNICAL EVENT</div>
       </div>
+      {/* <AddTechEvent/> */}
       {ShowUserData == true ? (
         <div>
          <ShowUser updatedUser={updatedUser}/>
@@ -173,4 +175,4 @@ const AdminProfile = () => {
 }
 
 export default AdminProfile
-// onClick={setShowUserData(true)}
+
