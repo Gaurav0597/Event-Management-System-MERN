@@ -6,7 +6,7 @@ import ShowUserDetails from './ShowUserDetails'
 const ShowUser = (props) => {
     const [booleanValue,setBooleanValue]=useState(false)
     const userdata = useSelector((state) => state.Event.userData)
-    console.log(userdata)
+    // console.log(userdata)
     const dispatch=useDispatch()
     const handleuserDetails=(e)=>{
         setBooleanValue(true)
@@ -14,12 +14,12 @@ const ShowUser = (props) => {
     }
   return (
     <div className="flex w-4/5 m-auto">
-    <div class="flex flex-col container max-w-md mt-10  w-1/2   items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow">
+    <div class="flex flex-col container max-w-md mt-10  w-1/2  bg-violet-900 rounded-lg ">
       <ul class="flex flex-col divide-y w-full">
         {props.updatedUser.map((e) => {
           return (
-            <div>
-                  <li class="flex flex-row">
+            <div className="dark:bg-gray-800 " >
+             <li class="flex flex-row ">
               <div class="select-none cursor-pointer  flex flex-1 items-center p-4 " >
                 <div class="flex flex-col w-10 h-10 justify-center items-center mr-4">
                   <a href="#" class="block relative">
@@ -69,7 +69,7 @@ const ShowUser = (props) => {
         })}
       </ul>
     </div>
-    {booleanValue?  <div className="details w-2/5 border-red-500 h-auto mt-10 ml-5">
+    {booleanValue?  <div className=" w-2/5  mt-10 ml-5">
         <ShowUserDetails data={userdata}/>
     </div>:null}
       

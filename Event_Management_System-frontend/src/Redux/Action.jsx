@@ -91,13 +91,15 @@ export const NonTechEventDataPost = (payload) => (dispatch) => {
   dispatch(NonTecheventDataRequest())
   Axios.post('http://localhost:5000/nonTechnicalEvent', payload)
     .then((response) => {
-      // console.log(response.data)
+        console.log(response)
+        alert("New event Added")
     })
     .then(() => {
       dispatch(nonTectdataFetch())
       // console.log(response.data)
     })
     .catch((error) => {
+      alert("New event not added")
       dispatch(NonTecheventDataFailure(error))
     })
 }

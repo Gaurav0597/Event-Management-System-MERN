@@ -21,7 +21,7 @@ function App() {
     <div className="bg-violet-900">
       <Navbar />
       {/* <AddTechEvent/> */}
-      {/* <AddNonTechEvent/> */}
+      <AddNonTechEvent/>
       {/* <NonTechnicalEvent/> */}
       {/* <AdminProfile/> */}
       <Routes>

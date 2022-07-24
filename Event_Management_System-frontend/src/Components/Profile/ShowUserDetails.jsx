@@ -5,7 +5,7 @@ const ShowUserDetails = (props) => {
   return (
     <div>
       <div>
-        <h1>Technical event</h1>
+        <h1 className="text-2xl text-cyan-300 mb-2">Technical event</h1>
         <div>
           <ul class="flex flex-col divide-y w-full">
             {props.data.techdata?.map((e) => {
@@ -36,7 +36,7 @@ const ShowUserDetails = (props) => {
         </div>
       </div>
       <div>
-        <h1>Non-Technical event</h1>
+        <h1 className="text-2xl text-cyan-300 mb-2 ">Non-Technical event</h1>
         <div>
         <ul class="flex flex-col divide-y w-full">
             {props.data.nontechData?.map((e) => {

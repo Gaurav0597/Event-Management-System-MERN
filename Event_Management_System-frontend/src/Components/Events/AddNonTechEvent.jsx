@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { NonTechEventDataPost,} from '../../Redux/Action'
 
+
 const AddNonTechEvent = () => {
+ 
   const dispatch = useDispatch()
   const [addEvent, setAddEvent] = useState({
     EventName: '',
