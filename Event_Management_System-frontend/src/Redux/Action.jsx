@@ -243,7 +243,7 @@ export const addEventTOUserFail = (payload) => {
 export const getUserRegisterEvents = (_id) => (dispatch) => {
   // console.log('hello')
   axios
-    .get(`http://localhost:5000/user/techEvent/${_id}`)
+    .get(`http://localhost:5000/user/${_id}`)
     .then((res) => {
       const obj = {
         techdata: res.data.techEvent,

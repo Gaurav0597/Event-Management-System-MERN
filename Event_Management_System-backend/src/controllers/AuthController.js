@@ -39,7 +39,7 @@ router.post('/register', (req, res) => {
   })
 })
 
-router.get('/user/techEvent/:id', async (req, res) => {
+router.get('/user/:id', async (req, res) => {
   console.log(req.params.id, 'hello')
   try {
     console.log('hello2S')

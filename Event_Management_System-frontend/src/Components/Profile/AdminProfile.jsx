@@ -9,7 +9,7 @@ const AdminProfile = () => {
   const updatedUser = Alluser.filter((e) => {
     return e.email != 'gauravpetkar28@gmail.com'
   })
-  // console.log(updatedUser)
+  console.log(updatedUser)
   const dispatch = useDispatch()
   const getUserdata = () => {
     dispatch(getAllUserDataFromBackend())
@@ -23,7 +23,7 @@ const AdminProfile = () => {
         <div className="w-3/5 ">
           <div className="ml-32 ">
             <img
-              className="h-[60px] w-[150px] rounded-full"
+              className="h-[60px] w-[150px] rounded-full "
               src="./201.webp"
               alt=""
             />
@@ -135,28 +135,9 @@ const AdminProfile = () => {
         <div>ADD NONTECHNICAL EVENT</div>
       </div>
       {ShowUserData == true ? (
-
-        <ShowUser updatedUser={updatedUser}/>
-        // <div className="w-4/5 m-auto p-8">
-        //   {updatedUser.map((e) => {
-        //     return (
-        //       <div
-        //         className="flex p-2 w-4/5 mb-2 justify-around rounded-full duration-150"
-        //       >
-        //         <h1 className="text-white text-2xl">{e.name}</h1>
-        //         <h1 className="text-white text-2xl">{e.email}</h1>
-        //         <button
-        //           type="button"
-        //           data-mdb-ripple="true"
-        //           data-mdb-ripple-color="light"
-        //           className="inline-block px-6 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-        //         >
-        //           Delete User
-        //         </button>
-        //       </div>
-        //     )
-        //   })}
-        // </div>
+        <div>
+         <ShowUser updatedUser={updatedUser}/>
+        </div>
       ) : null}
     </div>
   )
