@@ -68,4 +68,12 @@ router.get('/getuser', async (req, res) => {
     console.log(error)
   }
 })
+router.delete('/:id',async (req, res) => {
+  console.log(req.params.id)
+  User.deleteOne({_id:req.params.id}).then(()=>{
+   res.send("user deleted")
+  }).catch((err) => {
+   res.send("An error Occured")
+  })
+})
 export default router

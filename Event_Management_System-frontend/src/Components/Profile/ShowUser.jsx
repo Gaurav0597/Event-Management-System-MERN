@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserRegisterEvents } from '../../Redux/Action'
+import { deleteUserByAdmin, getUserRegisterEvents } from '../../Redux/Action'
 import ShowUserDetails from './ShowUserDetails'
 
 const ShowUser = (props) => {
@@ -11,6 +11,9 @@ const ShowUser = (props) => {
     const handleuserDetails=(e)=>{
         setBooleanValue(true)
        dispatch(getUserRegisterEvents(e))
+    }
+    const DeleteUser=(e)=>{
+        dispatch(deleteUserByAdmin(e))
     }
   return (
     <div className="flex w-4/5 m-auto">
@@ -38,9 +41,10 @@ const ShowUser = (props) => {
                 </div>
                 <div class="flex flex-row justify-center">
                
-                  <svg
+                  <svg 
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 text-orange-200 mr-2 mt-1"
+                    onClick={()=>DeleteUser(e._id)}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

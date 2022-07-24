@@ -9,6 +9,7 @@ import nontecheventContoller from "./controllers/NonTechnicalEvent.js"
 import coursecontroller from "./controllers/CourseController.js"
 import loginAuth from "./controllers/AuthController.js"
 import RegisterAuth from "./controllers/AuthController.js"
+import UserFile from "./controllers/AuthController.js"
 const app = express()
 
 app.use(
@@ -23,6 +24,7 @@ app.use('/nonTechnicalEvent', nontecheventContoller)
 app.use('/course',coursecontroller)
 app.use("/",loginAuth)
 app.use("/",RegisterAuth)
+app.use("/user",UserFile)
 
 const connection = process.env.DB
 const PORT = process.env.PORT || 5000

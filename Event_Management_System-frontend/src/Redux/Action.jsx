@@ -231,7 +231,18 @@ export const loginAdminName = (payload) => {
   }
 }
 //---------------------------------------------------------------------------------------------------------//
+ // write Delete user FUnctionality here
+ export const deleteUserByAdmin = (payload) => (dispatch) => {
+  Axios.delete(`http://localhost:5000/user/${payload}`)
+    .then((response) => {
+      dispatch(getAllUserDataFromBackend())
+    })
+    .catch((error) => {
+      console.log('error')
+    })
+}
 
+//----------------------------------------------------------------------------------------------------------------------//
 export const addEventTOUserReq = () => {
   return {
     type: types.GET_USER_TECH_DATA_REQUEST,

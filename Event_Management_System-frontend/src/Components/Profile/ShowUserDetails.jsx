@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ShowUserDetails = (props) => {
-    console.log(props.data.techdata)
+    // console.log(props.data.techdata)
   return (
     <div>
       <div>
