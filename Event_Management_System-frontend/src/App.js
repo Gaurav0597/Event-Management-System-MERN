@@ -16,6 +16,7 @@ import UserProfile from './Components/Profile/UserProfile'
 import AdminProfile from './Components/Profile/AdminProfile'
 import Profile from './Components/Profile/Profile'
 import LoginUser from './Components/auth/LoginUser'
+import RegisterUser from './Components/auth/RegisterUser'
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<LoginUser />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route path="/register" element={<RegisterUser />}></Route>
         <Route path="/event" element={<TechnicalEvents/>}></Route>
         <Route path="/event/:id" element={<EventDetailsComponet/>}></Route>
         <Route path="/nonTechnicalEvent" element={<NonTechnicalEvent/>}></Route>
