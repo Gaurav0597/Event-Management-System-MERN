@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserRegisterEvents } from '../../Redux/Action'
+import { EventRemoveByUser, getUserRegisterEvents } from '../../Redux/Action'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserProfile = () => {
     const userId = useSelector((state) => state.Event.userId)
     const userName = useSelector((state) => state.Event.userName)
     const userdata = useSelector((state) => state.Event.userData)
-    // console.log(userdata)
+    console.log(userdata)
     const dispatch= useDispatch()
+    var nontech="nonTechnicalEvent"
+    var tech="event"
+
+    const handleRemove=(route,id)=>{
+ 
+       dispatch(EventRemoveByUser(route,userId,id,toast))
+    }
     useEffect(()=>{
      dispatch(getUserRegisterEvents(userId))
     },[])
@@ -53,6 +62,7 @@ const UserProfile = () => {
             <p className="text-white text-justify">{e.Introduction}</p>
             <div>
               <button
+               onClick={()=>{handleRemove(tech,e._id)}}
                 className="text-white rounded-0
                 py-2 px-4 mt-4
                 md:py-2 md:px-4 md:mt-4
@@ -89,6 +99,7 @@ const UserProfile = () => {
             <p className="text-white text-justify">{e.Introduction}</p>
             <div>
               <button
+               onClick={()=>{handleRemove(nontech,e._id)}}
                 className="text-white rounded-0
                 py-2 px-4 mt-4
                 md:py-2 md:px-4 md:mt-4

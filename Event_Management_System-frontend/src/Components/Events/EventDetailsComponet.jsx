@@ -18,7 +18,7 @@ const EventDetailsComponet = () => {
       userId : userId,
       pathname:str
     }
-    dispatch(addTechEventToUser(obj))
+    dispatch(addTechEventToUser(obj,toast))
    }
  
    const handleEventdelete=()=>{

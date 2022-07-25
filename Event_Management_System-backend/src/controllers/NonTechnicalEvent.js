@@ -55,4 +55,15 @@ router.post('', async (req, res) => {
       res.status(400).json(err)
     }
   })
+  router.delete("/:id/:eventid" , async(req, res) =>{
+
+    try{
+      await User.updateOne({_id: req.params.id } , {'$pull' : {"nontechEvent" : req.params.eventid}} ,{ new : true})
+      
+      res.send({ error : false , message : "product delete"})
+    }catch(err){
+      console.log(err)
+    }
+  
+  })
 export default router

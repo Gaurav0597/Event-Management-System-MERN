@@ -13,11 +13,11 @@ const Navbar = () => {
     { name: 'Industry Talk', link: 'industryTalk' },
   ]
   return (
-    <div className="py-2 flex justify-between items-center px-8 z-10">
+    <div className=" flex justify-between items-center px-8 z-10">
       <div className="text-red-500 w-1/6">
-       <img className="h-12 w-12 rounded-2xl ml-16" src="./HomeLogo.png" alt="" />
+       <img className="h-20 rounded-2xl" src="./Home.svg" alt="" />
       </div>
-      <div className="flex ml-16 items-center w-4/6">
+      <div className="flex ml-36 items-center w-4/6">
         {/* pagesDiv */}
         {links.map((item) => {
           return (

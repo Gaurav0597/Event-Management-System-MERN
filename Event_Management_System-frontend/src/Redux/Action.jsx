@@ -173,7 +173,21 @@ export const deleteIndividualEvent = (payload,toast) => (dispatch) => {
    })
     })
 }
-
+//write axios request here for delete individual event by User
+export const EventRemoveByUser = (route,userId,Eventid,toast) => (dispatch) => {
+  Axios.delete(`http://localhost:5000/${route}/${userId}/${Eventid}`)
+    .then((response) => {
+      toast("Event has been deleted successfully",{
+        type:"success"
+     })
+     dispatch(getUserRegisterEvents(userId))
+    })
+    .catch((error) => {
+      toast("Error Please try again",{
+        type:"error"
+   })
+    })
+}
 //----------------------------------------------------------------------------//
 
 // COURSES ACTION CREATOR FUNCTIONS --------------------------------
@@ -288,16 +302,22 @@ export const getUserRegisterEvents = (_id) => (dispatch) => {
       console.log(err)
     })
 }
-export const addTechEventToUser = (payload) => (dispatch) => {
+export const addTechEventToUser = (payload,toast) => (dispatch) => {
   const { pathname } = payload
   console.log(pathname)
   axios
     .post(`http://localhost:5000${pathname}`, payload)
     .then((res) => {
+      toast("Event has been added successfully",{
+        type:"success"
+     })
       dispatch(getUserRegisterEvents(res.data._id))
       //   console.log(res.data)
     })
     .catch((err) => {
+      toast("Error Please try again",{
+        type:"error"
+   })
       console.log(err)
     })
 }

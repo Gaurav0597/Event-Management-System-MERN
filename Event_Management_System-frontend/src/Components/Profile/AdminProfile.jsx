@@ -72,7 +72,7 @@ const AdminProfile = () => {
           </div>
           <div className="flex mt-12 space-x-6 ml-32 ">
             <a
-              href="#"
+              href="https://www.facebook.com/gaurav.petkar.9"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -90,7 +90,7 @@ const AdminProfile = () => {
               <span className="sr-only">Facebook page</span>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/iam__gp7/"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -122,7 +122,7 @@ const AdminProfile = () => {
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="#"
+              href="https://github.com/Gaurav0597"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
