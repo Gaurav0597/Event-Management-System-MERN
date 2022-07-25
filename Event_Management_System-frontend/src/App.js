@@ -1,7 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Login from './Components/auth/Login'
-import Register from './Components/auth/Register'
 import Courses from './Components/Courses/Courses'
 import AddNonTechEvent from './Components/Events/AddNonTechEvent'
 import AddTechEvent from './Components/Events/AddTechEvent'
@@ -22,10 +20,6 @@ function App() {
   return (
     <div className="bg-violet-900">
       <Navbar />
-      {/* <AddTechEvent/>
-      <AddNonTechEvent/> */}
-      {/* <NonTechnicalEvent/> */}
-      {/* <AdminProfile/> */}
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<LoginUser />}></Route>

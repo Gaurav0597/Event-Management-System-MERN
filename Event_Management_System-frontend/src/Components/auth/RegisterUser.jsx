@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -24,22 +27,32 @@ const RegisterUser = () => {
   const register = () => {
     const { name, email, password, reEnterPassword } = user
     if (name && email && password && password === reEnterPassword) {
-      axios.post('http://localhost:5000/register', user).then((res) => {
-
-       if(res.data.message==="Successfully Registerd"){
-                    alert(res.data.message)
+      axios.post("http://localhost:5000/register", user)
+            .then( (res) => {
+                // console.log("res",res)
+                toast("Successfully Registered",{
+                    type:"success"
+                })
+                setTimeout(() =>{
                     navigate("/login")
-                }else{
-                    alert("Innvalid  registration Credentials")
-                }
-                console.log(res)
-      })
+                },4000)
+                
+            }).catch(err => {
+                toast("Invalid Input",{
+                    type:"error"
+                })
+            })
+    
     } else {
-      alert('invalid input')
+    
+      toast("invalid credentials",{
+        type:"error"
+   })
     }
   }
   return (
     <section className="h-full w-9/12 m-auto gradient-form  ">
+      <ToastContainer/>
     <div className="container py-12 px-6 h-full">
       <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
         <div className="xl:w-10/12">

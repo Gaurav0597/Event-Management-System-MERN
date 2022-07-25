@@ -15,8 +15,7 @@ const Navbar = () => {
   return (
     <div className="py-2 flex justify-between items-center px-8 z-10">
       <div className="text-red-500 w-1/6">
-        {/* imagediv */}
-        imageDiv
+       <img className="h-12 w-12 rounded-2xl ml-16" src="./HomeLogo.png" alt="" />
       </div>
       <div className="flex ml-16 items-center w-4/6">
         {/* pagesDiv */}

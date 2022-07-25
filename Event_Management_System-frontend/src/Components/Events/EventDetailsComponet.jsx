@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { addTechEventToUser, GetIndividualTechEventData ,deleteIndividualEvent} from '../../Redux/Action'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EventDetailsComponet = () => {
   const { id } = useParams()
@@ -24,7 +26,7 @@ const EventDetailsComponet = () => {
     // //   id:details._id,
     // //   pathname:str
     //   }
-      dispatch(deleteIndividualEvent(str))
+      dispatch(deleteIndividualEvent(str,toast))
 
    }
 
@@ -107,6 +109,7 @@ const EventDetailsComponet = () => {
         <p className="mb-3 text-base">* {details.Rule4}</p>
         <p className="mb-3 text-base">* {details.Rule5}</p>
       </div>
+      <ToastContainer/>
     </div>
   )
 }

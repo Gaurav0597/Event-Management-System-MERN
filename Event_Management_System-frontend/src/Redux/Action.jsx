@@ -1,6 +1,7 @@
 import * as types from './ActionType.jsx'
 import Axios from 'axios'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 //technicalevent data actioncreation funtion
@@ -37,18 +38,24 @@ export const TechEventDataFetch = (payload) => (dispatch) => {
       dispatch(TecheventDataFailure(error))
     })
 }
-export const TechEventDataPost = (payload) => (dispatch) => {
+export const TechEventDataPost = (payload,toast) => (dispatch) => {
   dispatch(TecheventDataRequest())
   Axios.post('http://localhost:5000/event', payload)
     .then((response) => {
       // dispatch(TecheventDataSuccess(response.data))
       // console.log(response.data)
+      toast("New event Added successfully",{
+        type:"success"
+   })
     })
     .then(() => {
       dispatch(TechEventDataFetch())
       // console.log(response.data)
     })
     .catch((error) => {
+      toast("New event has not Added unfortunately",{
+        type:"error"
+   })
       dispatch(TecheventDataFailure(error))
     })
 }
@@ -151,13 +158,19 @@ export const GetIndividualTechEventData = (payload) => (dispatch) => {
     })
 }
 
-// write axios request here for to delete indivudual Event  data
+// write axios request here for to delete indivudual Event  data by admin
 
-export const deleteIndividualEvent = (payload) => (dispatch) => {
+export const deleteIndividualEvent = (payload,toast) => (dispatch) => {
   Axios.delete(`http://localhost:5000${payload}`)
-    .then((response) => {})
+    .then((response) => {
+      toast("Event has been deleted successfully",{
+        type:"success"
+     })
+    })
     .catch((error) => {
-      console.log('error')
+      toast("Error Please try again",{
+        type:"error"
+   })
     })
 }
 

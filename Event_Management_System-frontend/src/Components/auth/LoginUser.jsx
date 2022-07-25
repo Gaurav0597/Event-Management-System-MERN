@@ -3,6 +3,9 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { login1, loginAdminId, loginAdminName, loginUser } from '../../Redux/Action'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const LoginUser = () => {
     const navigate = useNavigate()
@@ -33,13 +36,21 @@ const LoginUser = () => {
           }
       
           if(res.data.message=="login succesfully"){
-              alert("Login succesfully")
-                navigate('/')   
+              toast("Login succesfully",{
+                type:"success"
+           })
+           setTimeout(()=>{
+               navigate('/')
+           },3000)
+                
           }
         
         })
         .catch(function (err) {
-          alert('invalid credentials')
+          
+          toast("invalid credentials",{
+            type:"error"
+       })
         })
     }
   return (
@@ -120,6 +131,7 @@ const LoginUser = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   </section>
   )
