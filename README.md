@@ -44,7 +44,7 @@
 
 ## Features :
 
-• Admin Features: 
+**• Admin Features: **
 • Admin can add particular event also delte event.
 • Admin can see all the Participants and delete the particular participant.
 • Admin can explore the details of Participants and their registered events
