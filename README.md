@@ -44,15 +44,14 @@
 
 ## Features :
 
-• Admin Features:
-  • Admin can add particular event also delte event.
-  • Admin can see all the Participants and delete the particular participant.
-  • Admin can explore the details of Participants and their registered event
- 
+• Admin Features: 
+• Admin can add particular event also delte event.
+• Admin can see all the Participants and delete the particular participant.
+• Admin can explore the details of Participants and their registered events
 
-• Participant's Features:
-  • Participant's can register events and able to see registered event in the profile page
-  • Participant's can delete their registered events
+**• Participant's Features:**
+• Participant's can register events and able to see registered event in the profile page
+• Participant's can delete their registered events
    
    
 <h3>Home Page/h3>
