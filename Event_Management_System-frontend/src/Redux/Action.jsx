@@ -29,7 +29,7 @@ const TecheventDataFailure = (payload) => {
 
 export const TechEventDataFetch = (payload) => (dispatch) => {
   dispatch(TecheventDataRequest())
-  Axios.get('http://localhost:5000/event')
+  Axios.get('https://eventmanagement-by-gaurav.herokuapp.com/event')
     .then((response) => {
       dispatch(TecheventDataSuccess(response.data))
       // console.log(response.data)
@@ -40,7 +40,7 @@ export const TechEventDataFetch = (payload) => (dispatch) => {
 }
 export const TechEventDataPost = (payload,toast) => (dispatch) => {
   dispatch(TecheventDataRequest())
-  Axios.post('http://localhost:5000/event', payload)
+  Axios.post('https://eventmanagement-by-gaurav.herokuapp.com/event', payload)
     .then((response) => {
       // dispatch(TecheventDataSuccess(response.data))
       // console.log(response.data)
@@ -86,7 +86,7 @@ const NonTecheventDataFailure = (payload) => {
 
 export const nonTectdataFetch = (payload) => (dispatch) => {
   dispatch(NonTecheventDataRequest())
-  Axios.get('http://localhost:5000/nonTechnicalEvent')
+  Axios.get('https://eventmanagement-by-gaurav.herokuapp.com/nonTechnicalEvent')
     .then((res) => {
       // console.log(res.data)
       dispatch(NonTecheventDataSuccess(res.data))
@@ -97,7 +97,7 @@ export const nonTectdataFetch = (payload) => (dispatch) => {
 }
 export const NonTechEventDataPost = (payload,toast) => (dispatch) => {
   dispatch(NonTecheventDataRequest())
-  Axios.post('http://localhost:500/nonTechnicalEvent', payload)
+  Axios.post('https://eventmanagement-by-gaurav.herokuapp.com/nonTechnicalEvent', payload)
     .then((response) => {
         console.log(response)
         toast("New event Added successfully",{
@@ -148,7 +148,7 @@ const GetIndividualEventDataFailure = (payload) => {
 export const GetIndividualTechEventData = (payload) => (dispatch) => {
   dispatch(GetIndividualEventDataRequest())
 
-  Axios.get(`http://localhost:5000${payload}`)
+  Axios.get(`https://eventmanagement-by-gaurav.herokuapp.com${payload}`)
     .then((response) => {
       // console.log(response.data)
       dispatch(GetIndividualEventDataSuccess(response.data))
@@ -161,7 +161,7 @@ export const GetIndividualTechEventData = (payload) => (dispatch) => {
 // write axios request here for to delete indivudual Event  data by admin
 
 export const deleteIndividualEvent = (payload,toast) => (dispatch) => {
-  Axios.delete(`http://localhost:5000${payload}`)
+  Axios.delete(`https://eventmanagement-by-gaurav.herokuapp.com${payload}`)
     .then((response) => {
       toast("Event has been deleted successfully",{
         type:"success"
@@ -175,7 +175,7 @@ export const deleteIndividualEvent = (payload,toast) => (dispatch) => {
 }
 //write axios request here for delete individual event by User
 export const EventRemoveByUser = (route,userId,Eventid,toast) => (dispatch) => {
-  Axios.delete(`http://localhost:5000/${route}/${userId}/${Eventid}`)
+  Axios.delete(`https://eventmanagement-by-gaurav.herokuapp.com/${route}/${userId}/${Eventid}`)
     .then((response) => {
       toast("Event has been deleted successfully",{
         type:"success"
@@ -217,7 +217,7 @@ const GetCoursesDataFailure = (payload) => {
 // write axios request here for indivudual Event  data
 export const GetAllCoursesData = (payload) => (dispatch) => {
   dispatch(GetCoursesDataRequest())
-  Axios.get(`http://localhost:5000/course`)
+  Axios.get(`https://eventmanagement-by-gaurav.herokuapp.com/course`)
     .then((response) => {
       console.log(response.data)
       dispatch(GetCoursesDataSuccess(response.data))
@@ -260,7 +260,7 @@ export const loginAdminName = (payload) => {
 //---------------------------------------------------------------------------------------------------------//
  // write Delete user FUnctionality here
  export const deleteUserByAdmin = (payload) => (dispatch) => {
-  Axios.delete(`http://localhost:5000/user/${payload}`)
+  Axios.delete(`https://eventmanagement-by-gaurav.herokuapp.com/${payload}`)
     .then((response) => {
       dispatch(getAllUserDataFromBackend())
     })
@@ -290,7 +290,7 @@ export const addEventTOUserFail = (payload) => {
 export const getUserRegisterEvents = (_id) => (dispatch) => {
   // console.log('hello')
   axios
-    .get(`http://localhost:5000/user/${_id}`)
+    .get(`https://eventmanagement-by-gaurav.herokuapp.com/user/${_id}`)
     .then((res) => {
       const obj = {
         techdata: res.data.techEvent,
@@ -306,7 +306,7 @@ export const addTechEventToUser = (payload,toast) => (dispatch) => {
   const { pathname } = payload
   console.log(pathname)
   axios
-    .post(`http://localhost:5000${pathname}`, payload)
+    .post(`https://eventmanagement-by-gaurav.herokuapp.com${pathname}`, payload)
     .then((res) => {
       toast("Event has been added successfully",{
         type:"success"
@@ -350,7 +350,7 @@ const getAllUserDataFailure = (payload) => {
 
 export const getAllUserDataFromBackend = (payload) => (dispatch) => {
   dispatch(getAllUserDataRequest())
-  Axios.get('http://localhost:5000/getuser')
+  Axios.get('https://eventmanagement-by-gaurav.herokuapp.com/getuser')
     .then((res) => {
       dispatch(getAllUserDataSuccess(res.data))
     })

@@ -24,7 +24,7 @@ const LoginUser = () => {
     }
     const login = () => {
       axios
-        .post('http://localhost:5000/login', user)
+        .post('https://eventmanagement-by-gaurav.herokuapp.com/login', user)
         .then((res) => {
           console.log(res.data)
           if(res.data.user.email=="gauravpetkar28@gmail.com"){
